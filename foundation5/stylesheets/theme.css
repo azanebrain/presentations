@@ -1,0 +1,28 @@
+/* line 1, ../sass/theme.sass */
+div.center {
+  margin: 0 auto;
+}
+
+/* line 4, ../sass/theme.sass */
+div.img-circle {
+  border: solid 4px #eeeeee;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  width: 300px;
+  height: 300px;
+}
+
+/* line 12, ../sass/theme.sass */
+.img-aj {
+  background-image: url("../img/AJZane-pic.jpg");
+  background-position-y: -30px;
+  background-size: 100%;
+}
+
+/* line 17, ../sass/theme.sass */
+.img-yetti {
+  background-image: url("../img/yetti.jpg");
+  background-position-y: 0px;
+  background-size: 100%;
+}
