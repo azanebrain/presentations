@@ -1,0 +1,31 @@
+/* line 1, ../sass/theme.sass */
+div.center {
+  margin: 0 auto;
+}
+
+/* line 4, ../sass/theme.sass */
+div.img, div.img-circle {
+  background-size: 100%;
+  border: solid 4px #eee;
+  width: 300px;
+  height: 300px;
+}
+
+/* line 10, ../sass/theme.sass */
+div.img-circle {
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+}
+
+/* line 16, ../sass/theme.sass */
+.img-aj {
+  background-image: url("../img/AJZane-pic.jpg");
+  background-position-y: -30px;
+  background-size: 100%;
+}
+
+/* line 23, ../sass/theme.sass */
+.img-awp {
+  background-image: url("../img/logo-awp.jpg");
+}
