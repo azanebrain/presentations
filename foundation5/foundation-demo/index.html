@@ -1,0 +1,397 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation</title>
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <script src="bower_components/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-12 columns">
+<div data-interchange="[view/intro-small.html, (small)], [view/intro-medium.html, (medium)], [view/intro-large.html, (large)]">
+        <h1>Welcome to Foundation (default)</h1>
+</div>
+<noscript><h1>Welcome to Foundation(no js)</h1></noscript>
+      </div>
+    </div>
+
+    <div data-magellan-expedition="fixed">
+      <ul class="sub-nav">
+        <li data-magellan-arrival="basic-grid"><a href="#basic-grid">Your Basic Grid</a></li>
+        <li data-magellan-arrival="form"><a href="#form">Form</a></li>
+        <li data-magellan-arrival="typography"><a href="#typography">Typography</a></li>
+        <li data-magellan-arrival="other-concepts"><a href="#other-concepts">Other Concepts</a></li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div data-alert class="panel">
+          <h3>We&rsquo;re stoked you want to try Foundation! </h3>
+          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
+          <p>Once you've exhausted the fun in this document, you should check out:</p>
+          <div class="row">
+            <div class="large-4 medium-4 columns">
+          <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <p><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <p><a href="http://twitter.com/foundationzurb">@foundationzurb</a><br />Ping us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).</p>
+            </div>        
+          </div>
+          <a href="#" class="close">&times;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-8 medium-8 columns">
+        <a name="basic-grid" class="foundation-magellan-anchor" data-magellan-destination="basic-grid"></a>
+        <h5>Here&rsquo;s your basic grid:</h5>
+        <!-- Grid Example -->
+
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="callout panel">
+              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 medium-6 columns">
+            <div class="callout panel">
+              <p>Six columns</p>
+            </div>
+          </div>
+          <div class="large-6 medium-6 columns">
+            <div class="callout panel">
+              <p>Six columns</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="callout panel">
+              <p>Four columns</p>
+            </div>
+          </div>
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="callout panel">
+              <p>Four columns</p>
+            </div>
+          </div>
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="callout panel">
+              <p>Four columns</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-4 medium-6 small-12 columns">
+            <div class="callout panel">
+              Large-4<br>Medium-6<br>Small-12
+            </div>
+          </div>
+          <div class="large-4 medium-6 small-12 columns">
+            <div class="callout panel">
+              Large-4<br>Medium-6<br>Small-12
+            </div>
+          </div>
+          <div class="large-4 medium-6 small-12 columns">
+            <div class="callout panel">
+              Large-4<br>Medium-6<br>Small-12
+            </div>
+          </div>
+        </div>
+        
+        <hr />
+        <a name="form" class="foundation-magellan-anchor" data-magellan-destination="form"></a>
+        <h5>We bet you&rsquo;ll need a form somewhere:</h5>
+        <form>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Input Label</label>
+              <input type="text" placeholder="large-12.columns" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-4 medium-4 columns">
+              <label>Input Label</label>
+              <input type="text" placeholder="large-4.columns" />
+            </div>
+            <div class="large-4 medium-4 columns">
+              <label>Input Label</label>
+              <input type="text" placeholder="large-4.columns" />
+            </div>
+            <div class="large-4 medium-4 columns">
+              <div class="row collapse">
+                <label>Input Label</label>
+                <div class="small-9 columns">
+                  <input type="text" placeholder="small-9.columns" />
+                </div>
+                <div class="small-3 columns">
+                  <span class="postfix">.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Select Box</label>
+              <select>
+                <option value="husker">Husker</option>
+                <option value="starbuck">Starbuck</option>
+                <option value="hotdog">Hot Dog</option>
+                <option value="apollo">Apollo</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-6 medium-6 columns">
+              <label>Choose Your Favorite</label>
+              <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+              <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+            </div>
+            <div class="large-6 medium-6 columns">
+              <label>Check these out</label>
+              <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+              <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Textarea Label</label>
+              <textarea placeholder="small-12.columns" style="height:400px;"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>     
+
+      <div class="large-4 medium-4 columns">
+        <h5>Try one of these buttons:</h5>
+        <p><a href="#" class="small button">Simple Button</a><br/>
+        <a href="#" class="small radius button">Radius Button</a><br/>
+        <a href="#" class="small round button">Round Button</a><br/>            
+        <a href="#" class="medium success button">Success Btn</a><br/>
+        <a href="#" class="medium alert button">Alert Btn</a><br/>
+        <a href="#" class="medium secondary button">Secondary Btn</a><br>
+        <a href="#" class="button split">Split Button <span data-dropdown="drop"></span></a><br>
+        <ul id="drop" class="f-dropdown" data-dropdown-content>
+          <li><a href="#">This is a link</a></li>
+          <li><a href="#">This is another</a></li>
+          <li><a href="#">Yet another</a></li>
+        </ul>
+        <a href="#" data-dropdown="drop" class="button dropdown">Dropdown Button</a><br>
+        <ul id="drop" data-dropdown-content class="f-dropdown">
+          <li><a href="#">This is a link</a></li>
+          <li><a href="#">This is another</a></li>
+          <li><a href="#">Yet another</a></li>
+        </ul>
+      </p>           
+        <div class="panel">
+          <h5>So many components, girl!</h5>
+          <p>A whole kitchen sink of goodies comes with Foundation. Checkout the docs to see them all, along with details on making them your own.</p>
+          <a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <a name="typography" class="foundation-magellan-anchor" data-magellan-destination="typography"></a>
+      <div class="small-12 columns"><h2>Typography</h2></div>
+      <div class="small-12 columns">
+        <h1>h1. This is a very large header.</h1>
+        <h2>h2. This is a large header.</h2>
+        <h3>h3. This is a medium header.</h3>
+        <h4>h4. This is a moderate header.</h4>
+        <h5>h5. This is a small header.</h5>
+        <h6>h6. This is a tiny header.</h6>
+        <h1 class="subheader">h1.subheader</h1>
+        <h2 class="subheader">h2.subheader</h2>
+        <h3 class="subheader">h3.subheader</h3>
+        <h4 class="subheader">h4.subheader</h4>
+        <h5 class="subheader">h5.subheader</h5>
+        <h6 class="subheader">h6.subheader</h6>
+        <h1>h1. <small>Small segment header.</small></h1>
+        <h2>h2. <small>Small segment header.</small></h2>
+        <h3>h3. <small>Small segment header.</small></h3>
+        <h4>h4. <small>Small segment header.</small></h4>
+        <h5>h5. <small>Small segment header.</small></h5>
+        <h6>h6. <small>Small segment header.</small></h6>
+        <p>
+          This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. Wrap <code>strong</code> around type to <strong>make it bold!</strong> You can also use <code>em</code> to <em>italicize your words</em>
+        </p>
+        <p>Links are very standard, and the <a href="http://www.youtube.com/watch?v=zT2aVoUkSDg">color is preset</a> to the Foundation primary color.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <a name="other-concepts" class="foundation-magellan-anchor" data-magellan-destination="other-concepts"></a>
+      <h1>Other Concepts</h1>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns"><h2>Progress Bars</h2>
+        <div class="progress large-6">
+          <span class="meter" style="width: 40%"></span>
+        </div>
+        <div class="radius progress success large-8">
+          <span class="meter" style="width: 80%"></span>
+        </div>
+        <div class="nice round progress alert large-10">
+          <span class="meter" style="width: 30%"></span>
+        </div>
+        <div class="nice secondary progress">
+          <span class="meter" style="width: 50%"></span>
+        </div>
+      </div><!--col-->
+    </div><!--row-->
+
+    <div class="row">
+      <div class="small-12 columns"><h2>Breadcrumbs</h2>
+        <ul class="breadcrumbs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li class="unavailable"><a href="#">Gene Splicing</a></li>
+          <li class="current"><a href="#">Cloning</a></li>
+        </ul>
+      </div><!--col-->
+    </div><!--row-->
+
+    <div class="row">
+      <div class="small-12 columns"><h2>Pagination</h2>
+        <ul class="pagination">
+          <li class="arrow unavailable"><a href="">&laquo;</a></li>
+          <li class="current"><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li class="unavailable"><a href="">&hellip;</a></li>
+          <li><a href="">12</a></li>
+          <li><a href="">13</a></li>
+          <li class="arrow"><a href="">&raquo;</a></li>
+        </ul>
+      </div><!--col-->
+    </div><!--row-->
+
+    <div class="row">
+      <div class="small-12 columns"><h2>Pricing Table</h2>
+        <ul class="pricing-table">
+          <li class="title">Standard</li>
+          <li class="price">$99.99</li>
+          <li class="description">An awesome description</li>
+          <li class="bullet-item">1 Database</li>
+          <li class="bullet-item">5GB Storage</li>
+          <li class="bullet-item">20 Users</li>
+          <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+        </ul>
+      </div><!--col-->
+    </div><!--row-->
+
+    <div class="row">
+      <div class="small-12 columns"><h2>Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th width="200">Table Header</th>
+              <th>Table Header</th>
+              <th width="150">Table Header</th>
+              <th width="150">Table Header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Content Goes Here</td>
+              <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+              <td>Content Goes Here</td>
+              <td>Content Goes Here</td>
+            </tr>
+            <tr>
+              <td>Content Goes Here</td>
+              <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+              <td>Content Goes Here</td>
+              <td>Content Goes Here</td>
+            </tr>
+            <tr>
+              <td>Content Goes Here</td>
+              <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+              <td>Content Goes Here</td>
+              <td>Content Goes Here</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!--col-->
+    </div><!--row-->
+
+    <div class="row">
+      <div class="small-12 columns"><h2>Accordians and Tabs</h2>
+        <dl class="accordion" data-accordion>
+          <dd>
+            <a href="#panel1">Accordion 1</a>
+            <div id="panel1" class="content active">
+              <dl class="tabs" data-tab>
+                <dd class="active"><a href="#panel2-1">Tab 1</a></dd>
+                <dd><a href="#panel2-2">Tab 2</a></dd>
+                <dd><a href="#panel2-3">Tab 3</a></dd>
+                <dd><a href="#panel2-4">Tab 4</a></dd>
+              </dl>
+              <div class="tabs-content">
+                <div class="content active" id="panel2-1">
+                  <p>First panel content goes here...</p>
+                </div>
+                <div class="content" id="panel2-2">
+                  <p>Second panel content goes here...</p>
+                </div>
+                <div class="content" id="panel2-3">
+                  <p>Third panel content goes here...</p>
+                </div>
+                <div class="content" id="panel2-4">
+                  <p>Fourth panel content goes here...</p>
+                </div>
+              </div>
+            </div>
+          </dd>
+          <dd>
+            <a href="#panel2">Accordion 2</a>
+            <div id="panel2" class="content">
+              Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </dd>
+          <dd>
+            <a href="#panel3">Accordion 3</a>
+            <div id="panel3" class="content">
+              Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </dd>
+        </dl>
+      </div><!--col-->
+    </div><!--row-->
+
+    <div class="row">
+      <div class="small-12 columns"><h2>Side nav</h2>
+      <p>The side nav is a navigation section that always aligns vertically.</p>
+      <p>It is not 'floated' to the left of other content. It is simply always vertical.</p>
+      </div>
+      <div class="medium-6 columns">
+        <ul class="side-nav">
+          <li class="active"><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+      <div class="medium-6 columns">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, pariatur et voluptas vitae sit ad tempore nulla nobis maxime voluptates. Porro consectetur aut modi velit./p>
+      </div><!--col-->
+    </div><!--row-->
+    
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

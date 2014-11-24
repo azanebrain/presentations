@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>AJ Zane - Foundation 5</title>
+
+		<meta name="description" content="AJ Zane's presentation on Foundation 5">
+		<meta name="author" content="AJ Zane">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Custom for this -->
+		<link rel="stylesheet" href="stylesheets/theme.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Zurb's Foundation 5</h1>
+					<h3>An awesome front end framework</h3>
+					<a href="http://foundation.zurb.com/" target="_blank"><div class="img-circle img-yetti center">&nbsp;</div></a>
+					<p>
+						<small><a href="http://foundation.zurb.com/" target="_blank">foundation.zurb.com</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>This guy: AJ Zane</h3>
+					<div class="img-circle img-aj center">&nbsp;</div>
+					<p><small>
+						<a href="http://github.com/AJZane" target="_blank">github: AJZane</a> | <a href="https://twitter.com/azanebrain" target="_blank">@azanebrain</a> | <a href="https://plus.google.com/108392519941499456474/posts" target="_blank">g+</a>
+					</small></p>
+					<h3>Background:</h3>
+					<p>
+						Interactive Multimedia, Digital Marketing, Big Data Analytics, East Asian Studies
+					</p>
+					</p>
+					<aside class="notes">
+						I'm AJ Zane. 
+						<br>I can be found at AJZane on most things, or on twitter @azanebrain, which I've just started using
+						<br>My background is in Interactive Multimedia, Digital Marketing, Big Data Analytics, and the so-relevant East Asian Studies
+					</aside>
+				</section>
+
+				<section>
+					<h2>Presentation Overview</h2>
+					<p>
+						Link: <a href="http://github.com/AJZane/slides-foundation5" target="_blank">github.com/AJZane/slides-foundation5</a>
+					</p>
+					<ul>
+						<li>Front end frameworks</li>
+						<li>Setting up Foundation</li>
+						<li>Foundation Concepts</li>
+						<li><a href="/foundation-docs" target="_blank">Docs</a></li>
+						<li><a href="/foundation-demo" target="_blank">Demo</a></li>
+					</ul>
+					<aside class="notes">
+						This presentation is going to introduce front end frameworks and give you an in depth look at Foundation
+						<br>You can clone this whole presentation and follow along if you'd like, or refer to it later. I have a demo foundation site in the 'foundation-demo' directory of the repo
+					</aside>
+				</section>
+
+				<section>
+					<h3>Definition</h3>
+					<p>
+						A front end framework is a library of CSS, JS, and HTML to aid in developing web sites.
+						<br>
+						<a href="http://foundation.zurb.com" target="_blank">Foundation</a>
+						|
+						<a href="http://getbootstrap.com/" target="_blank">Bootstrap</a><br>
+						<a href="http://gumbyframework.com/" target="_blank">Gumby</a>
+						|
+						<a href="http://www.initializr.com/" target="_blank">Initializr / HTML5 Bootstrap </a><br>
+						<a href="http://groundworkcss.github.io/" title="Groundwork">Groundwork</a>
+						|
+						<a href="http://www.99lime.com/elements/" target="_blank">HTML5 Kickstart</a><br>
+						<a href="http://weice.in/ivory/" target="_blank">Ivory</a>
+						|
+						<a href="http://imperavi.com/kube/" target="_blank">Kube</a><br>
+						<a href="http://www.getuikit.com/" target="_blank">UIKit</a><br>
+					</p>
+					<aside class="notes">
+						Definition: A front end framework is a library of CSS, JS, and HTML to aid in developing web sites. 
+						<br>As you can see, there are a lot frameworks. The biggest are (Twitter) Bootstrap and Foundation
+					</aside>
+				</section>
+
+				<section>
+					<h3>Definition</h3>
+					<p>
+						They typically come with UI kits and methodologies for 
+					</p>
+					<ul>
+						<li>Columns and grid layouts</li>
+						<li>Responsive design</li>
+						<li>Device support</li>
+					</ul>
+					<aside class="notes">
+						
+					</aside>
+				</section>
+
+				<section>
+					<h3>They are <strong><u>not</u></strong></h3>
+					<p>A content management system</p>
+					<p>A library that plugs into other tools
+						<br>
+						jQuery, normalize, 960 grid, modernizr are not frameworks
+					</p>
+					<aside class="notes">
+					 	In fact, you’ll see that these smaller libraries come together to form foundation.
+						<br>
+						Like a yetti megazord
+					</aside>
+				</section>
+
+				<section>
+					<h2>But Why?</h2>
+					<p>Use someone else's code</p>
+					<p>Change markup to work with just 1 framework</p>
+					<p>Plumbing vs Developing</p>
+					<aside class="notes">
+					 	If you become good with a framework, you could become a 'plumber' not a developer.
+					 	<br>It's true. It's very easy to depend on it. So as long as you understand what's going on under the hood, so you can use it to your advantage and understand WHY it works
+					</aside>
+				</section>
+
+				<section>
+					<h2>Community.</h2>
+					<p>&gt;5,000 commits</p>
+					<p>&gt;350 contributors</p>
+					<p>40 pages of closed pull requests</p>
+					<p>&gt;3,500 closed issues</p>
+					<aside class="notes">
+						That's in 2 years.
+						<br>There's 168 hours in a week. If you spent every single hour working, do you think you could accomplish that much?
+					</aside>
+				</section>
+
+				<section>
+					<h2>Good for groups</h2>
+					<p>Documentation</p>
+					<p>Common lexicon</p>
+					<p>Separation of layout and functionality</p>
+					<aside class="notes">
+						Good documentation is hard to write.
+						<br>You can jump between projects and know the code patterns and layout elements
+						<br>You'll see in the demo how designers and developers can work in parallel because elements are modular
+					</aside>
+				</section>
+
+				<section>
+					<h1>Meant for prototyping</h1>
+					<p>
+						<small><a href="http://foundation.zurb.com/learn/case-ths.html" target="_blank">Case Studies</a></small>
+					</p>
+					<aside class="notes">
+						This is where Foundation is different than other frameworks
+						<br>It was originally for prototyping, but is such a strong architecture it can support real sites
+						<br>It's perfect for iterative your development
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Get Started</h2>
+						<p>
+							1) <a href="http://foundation.zurb.com/develop/download.html" target="_blank">Download and customize</a>
+						</p>
+						<p>
+							2) <a href="foundation-docs/sass.html" target="_blank">Use command line</a>
+						</p>
+						<p>
+							3) <a href="foundation-docs/applications.html" target="_blank">In your app
+						</p>
+						<p>&nbsp;</p>
+						<p>I suggest Sean Lange's <a href="http://bluefysh.com/yogubo/#/" target="_blank">YOGUBO</a> presentation for an intro on Yeoman / Grunt / Bower</p>
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h2>Get Started (cli)</h2>
+							<ul>
+								<li>
+									Assuming you have bower and grunt installed 
+									<ul>
+										<li>if not: [sudo] npm install -g bower grunt-cli</li>
+									</ul>
+								</li>
+								<li>gem install foundation</li>
+								<li>foundation new MY_PROJECT</li>
+							</ul>
+					</section>
+					<section>
+						<h2>Folder Structure (cli)</h2>
+						<ul>
+							<li>
+								Bower Components
+								<ul>
+									<li>
+										Foundation
+										<ul>
+											<li>foundation JS & CSS</li>
+											<li>normalize.css</li>
+										</ul>
+									</li>
+									<li>jQuery</li>
+									<li>Modernizr</li>
+								</ul>
+							</li>
+							<li>
+								SCSS
+								<ul>
+									<li>_settings.scss</li>
+									<li>app.scss</li>
+								</ul>
+							</li>
+							<li>index.html</li>
+						</ul>
+						<aside class="notes">
+							Here you can see how the pieces come together to make the framework (like a megazord)
+						</aside>
+					</section>
+					<section>
+						<h2>Compile</h2>
+						<p>Run 
+							<br><code>compass compile</code>
+						</p>
+						<p>&nbsp;</p>
+						<p>
+							My project was not including normalize.
+							<br>Import it on app.scss:  
+							<br><code>@import "normalize";</code>
+							<br>Before everything else
+						</p>
+						<aside class="notes">
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>What actually makes the framework</h2>
+					<p>
+						Dependencies
+					</p>
+					<ul>
+						<li>normalize.css</li>
+						<li>modernizr</li>
+						<li>jQuery</li>
+					</ul>
+						<p>&nbsp;</p>
+					<p>Foundation</p>
+					<ul>
+						<li>Foundation CSS</li>
+						<li>Foundation JS</li>
+					</ul>
+					<aside class="notes">
+						Normalize makes a standard level of CSS and browser compatibility
+						<br>Modernizr is for browser compatibility and feature tests
+						<br>jQuery is for javascript and UI
+						<br>Foundation's components are actually only 2 pieces
+					</aside>
+				</section>
+
+				<section>
+					<h2>Concepts (stylistic base)</h2>
+					<ul>
+						<li>The styles of Foundation don’t get in the way and are easy to overwrite</li>
+						<li><a href="/foundation-demo" target="_blank">Demo</a></li>
+					</ul>
+					<aside class="notes">
+						Foundation is very easy to modify and build on
+					</aside>
+				</section>
+
+				<section>
+					<h2>Concepts (css)</h2>
+					<p>					
+					<a href="/foundation-docs/components/visibility.html" target="_blank">Visibility</a>
+					 | 
+					<a href="/foundation-docs/components/grid.html" target="_blank">Grid</a>
+					</p>
+					<p>
+					<a href="/foundation-docs/components/block_grid.html" target="_blank">Block grid</a>
+					 | 
+					<a href="/foundation-demo" target="_blank">Buttons</a>
+					</p>
+					<p>
+					<a href="/foundation-docs/components/thumbnails.html" target="_blank">Thumbnails</a>
+					 | 
+					<a href="/foundation-docs/utility-classes.html" target="_blank">Utility classes</a>
+					</p>
+					<p>
+					<a href="/foundation-docs/components/rtl.html" target="_blank">Right to left support</a>
+					 | 
+					<a href="/foundation-docs/components/subnav.html" target="_blank">Sub nav and Side nav</a>
+					</p>
+					<p>
+					<a href="/foundation-docs/components/global.html" target="_blank">Global styles</a>
+					 | 
+					<a href="/foundation-docs/media-queries.html" target="_blank">Media queries</a>
+					</p>
+					<aside class="notes">
+						VISIBILITY: small/med/large
+						<br>GRID: rows & columns. Default is 12 col
+						<br>-- & offset, center, push/pull 
+						<br>--& mixins - allows you to assign row classes to the css, instead of inline markup
+						<br>UTILITY: You can start to see how the markup is very 'foundation-y'. You'll see later that you can change this through sass, but it is nice to be able to look at the HTML and know how the page will look
+						<br>Sub/Side Nav: the docs nav is a sidenav 
+						<br>--& sub nav + magellan is very cool. I’ll get into it later
+						<br>GLOBAL STYLES: Skip down to the variables. Values are easy to overwrite (app/_settings.sass - make it 18col)
+						<br>media query semantics. Foundation uses ‘size-up’ to explain min-width. Makes a lot of sense
+						<br>MEDIA QUERIES: Very easy to customize your layout
+					</aside>
+				</section>
+
+				<section>
+					<h2>Concepts (JS)</h2>
+					<p>
+scripts run with this command: <code>$(document).foundation();</code> (<a href="/foundation-demo/js/app.js" target="_blank">app.js</a>)
+</p>
+<p>
+<a href="/foundation-docs/components/interchange.html" target="_blank">interchange (images)</a>
+ | 
+<a href="/foundation-demo" target="_blank">interchange (content)</a>
+</p>
+<p>
+<a href="/foundation-docs/components/offcanvas.html" target="_blank">offcanvas navigation</a>
+ | 
+<a href="/foundation-docs/components/topbar.html" target="_blank">top bar</a>
+</p>
+<p>
+<a href="/foundation-demo" target="_blank">Magellan</a>
+ | 
+<a href="/foundation-docs/components/orbit.html" target="_blank">Orbit Slider</a>
+</p>
+<p>
+<a href="/foundation-docs/components/clearing.html" target="_blank">Clearing lightbox</a>
+ | 
+<a href="/foundation-docs/components/flex_video.html" target="_blank">flexvideo</a>
+</p>
+<p>
+					</p>
+					<aside class="notes">
+						FLEXVIDEO: I’m not sure about performance. Notice that they are using youtube and video
+					</aside>
+				</section>
+
+				<section>
+					<h2>Concepts (more UX)</h2>
+					<p>
+					<a href="/foundation-docs/components/abide.html" target="_blank">Forms (Abide Validation) </a>
+					 | 
+					<a href="/foundation-docs/components/reveal.html" target="_blank">Reveal (modals)</a>
+					</p>
+					<p>
+					<a href="/foundation-docs/components/alert_boxes.html" target="_blank">Alert</a>
+					 | 
+					<a href="/foundation-docs/components/tooltips.html" target="_blank">Tooltips</a>
+					</p>
+					<p>
+					<a href="/foundation-docs/components/joyride.html" target="_blank">Joyride</a>
+					 | 
+					<a href="/foundation-docs/components/dropdown.html" target="_blank">Dropdown content</a>
+					</p>
+					<aside class="notes">
+						ALERT: And you can apply them to any div (<a href="/foundation-demo/" target="_blank">demo</a>)
+						DROPDOWN CONTENT: This is similar to the dropdown button
+					</aside>
+				</section>
+
+				<section>
+					<h2>Wrap Up</h2>
+					<ul>
+						<li>Great for quickly starting an idea and carrying it all the way through</li>
+						<li>Excellent for teams of any size</li>
+						<li>Modular. Minimal UI. Very Extendable</li>
+						<li>Constantly getting better</li>
+						<li><a href="http://foundation.zurb.com/learn/case-ths.html" target="_blank">Case studies again</a></li>
+					</ul>
+					
+					<aside class="notes">
+						Carry all the way - Wireframe BECOMES the final product
+						<br>Contanstly getting better - Main site has fly in animation classes
+					</aside>
+				</section>
+
+				<section>
+					<h2>Yettis</h2>
+					<div class="img-circle img-yetti center">&nbsp;</div>
+					<aside class="notes">
+						Most importantly. It's all about yettis.
+					</aside>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

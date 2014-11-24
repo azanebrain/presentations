@@ -1,0 +1,9 @@
+.htaccess
+wp-config.php
+error_log
+*.log
+
+.sass-cache
+Thumbs.db
+*.ini
+.DS_Store
