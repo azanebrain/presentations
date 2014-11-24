@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>AJ Zane - Adobe Edge Tools</title>
+
+		<meta name="description" content="AJ Zane's presentation on Adobe Edge Tools">
+		<meta name="author" content="AJ Zane">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Custom for this -->
+		<link rel="stylesheet" href="stylesheets/theme.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Adobe Edge Tools</h1>
+					<h3>and the Death of Web Development</h3>
+					<div class="img img-deathoweb center">&nbsp;</div>
+				</section>
+				<section>
+					<h1>
+						<a href="http://azanebrain.github.io/slides-adobeedge/" target="_blank">azanebrain.github.io
+						<br>/slides-adobeedge</a>
+					</h1>
+				</section>
+
+				<section>
+					<h3>This guy: AJ Zane</h3>
+					<div class="img-circle img-aj center">&nbsp;</div>
+					<p>
+						<a href="https://twitter.com/azanebrain" target="_blank">@azanebrain</a> | <a href="http://github.com/azanebrain" target="_blank">github</a> | <a href="https://plus.google.com/+AJZane" target="_blank">g+</a>
+					</p>
+					<h3>Background:</h3>
+					<p>
+						Interactive Multimedia, Digital Marketing, Big Data Analytics, East Asian Studies
+					</p>
+					</p>
+					<aside class="notes">
+						I'm AJ Zane. 
+						<br>I can be found @azanebrain on most things
+						<br>My background is in Interactive Multimedia, Digital Marketing, Big Data Analytics, and the so-relevant East Asian Studies
+					</aside>
+				</section>
+
+				<section>
+					<h2>History:</h2>
+					<a class="image" href="http://www2.warnerbros.com/spacejam/movie/cmp/souvenirs/souvenirsframes.html" target="_blank">
+						<img height="400" src="img/spacejam.png" alt="Spacejam">
+					</a>
+					<br><a class="fragment" href="http://www2.warnerbros.com/spacejam/movie/jam.htm" target="_blank"><small>Yes, it's still online</small></a>
+					
+					<aside class="notes">
+						~bend to your will~
+						<br>And this is my history
+						<br>CLICK ON SCREEN SAVERS
+						<br>Tables
+						<br>Frames
+						<br>Image maps
+						<br>Scrollbarception
+						<br>Horrible design
+						<br>You had to make things bend to your will
+						<br>*Yes, the spacejam site is still online from 96
+					</aside>
+				</section>
+
+				<section data-background="img/presenttools.png" data-background-repeat="repeat" data-background-size="200px">
+					<h2 style="color:#111">Present:</h2>
+					
+					<aside class="notes">
+						Things have changed a lot in very good ways:
+						<br>git
+						<br>multi browser testing
+						<br>JS frameworks
+						<br>precompiling
+						<br>arguably still horrible design
+					</aside>
+				</section>
+
+				<section>
+					<h3>Not easier</h3>
+					<img src="img/itcrowd-mosthrowscomp.gif" alt="IT Crowd - Mos throws a computer">
+					
+					<aside class="notes">
+						But it's not any easier
+						<br>You still need to make these things bend to your will.
+						<br>You still have to learn every day
+						<br>And you still want to break your computer
+						<br>-Mos from IT Crowd
+					</aside>
+				</section>
+
+				<section>
+					<h1>ADOBE</h1>
+					<div class="fragment">
+						<h3>For EZ wins</h3>
+						<div class="img img-circle img-adobetoolsforeasywins center">&nbsp; </div>
+					</div>
+					<aside class="notes">
+						Adobe has been trying to make it easier for a long time.
+						<br>* Photoshop, Dreamweaver, flash, fire works
+						<br>They have been a trend setter and influencer in our community 
+					</aside>
+				</section>
+
+				<section>
+					<h2>Edge Tools Overview</h2>
+					<p>
+						<img src="img/adobeedge.jpeg" alt="Adobe tools to make web dev easier">
+					</p>
+
+					<ul>
+						<li class="fragment">Creative Cloud account</li>
+						<li class="fragment"><a href="https://helpx.adobe.com/creative-cloud/learn/start.html?trackingid=KLHTP" target="_blank">Learning resources</a></li>
+						<li class="fragment"><a href="https://creative.adobe.com/addons" target="_blank">Add-on Library</a></li>
+						<li class="fragment">Good or Bad?</li>
+					</ul>
+					
+					<aside class="notes">
+						Edge Tools
+						<br>* You need a CC monthly account
+						<br>* They are pushing learning
+						<br>* They just released an add-on library today
+						<br>What I want to talk to you about tonight is how these tools interact with our community. 
+						<br>It’s a quick presentation so I’d like to open the room and just have an open chit-chat afterward
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h1>Animate</h1>
+						<p>
+							&ldquo;...lets web designers create interactive HTML animations for web, digital publishing, rich media advertising and more, reaching both desktop and mobile with ease.
+						</p>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="img/arrow-down.png" alt="Down arrow">
+						</a>
+						<aside class="notes">
+							The quote: "lets web designers create interactive HTML animations for web, digital publishing, rich media advertising and more, reaching both desktop and mobile with ease."
+							<br>- It basically just means flash.
+						</aside>
+					</section>
+					<section>
+						<h3>Features</h3>
+						<ul>
+							<li> Include external JS libraries
+							</li>
+							<li><a href="http://www.edgedocks.com/edgecommons" target="_blank">Edge Commons</a> Extension Libraries</li>
+							<li>Host assets through Adobe CDN</li>
+							<li>Import into other Adobe tools (Reflow, Muse, InDesign)</li>
+							<li>Interactivity</li>
+							<li><a href="http://html.adobe.com/edge/animate/showcase.html" target="_bank">Showcase</a></li>
+						</ul>
+						<aside class="notes">
+							Put a lot of work into keeping Animate projects modular and portable
+							<br>It has full integration with JS (not actionscript)
+						</aside>
+					</section>
+					<section>
+						<h2>Demo</h2>
+						<h2><a href="http://html.adobe.com/edge/animate/showcase/birds/" target="_blank">Two Birds of a Feather</a></h2>
+						<aside class="notes">
+							Demo:
+							<br>-Like a mix between AFX and Flash
+							<br>-Selectable objects, tweens, and you can insert JS
+							<br>-It gets really deep fast. If anyone else wants to do a talk on this, let me know
+							<br>Two Birds: USPs: Responsive, interactive, portable
+							<br>! Don't close the demo in case you dev inspect it
+						</aside>
+					</section>
+					<section>
+						<h2>Longevity</h2>
+						<p class="fragment">Flash was great</p>
+						<img class="fragment" src="img/iosmissingflash.jpg">
+
+						<aside class="notes">
+							The big question is should you spend time learning this?
+							<br>* Flash was really cool
+							<br>* Until it wasn't.
+							<br>If you haven't seen this image it's basically saying this is how the DC superheros look on android. But Flash is missing on iOS
+						</aside>
+					</section>
+					<section>
+						<p>&#x2713; HTML5</p>
+						<p>&#x2717; Hard to read</p>
+						<br>
+						<p class="fragment">
+							Easy integration into other Adobe Tools today... 
+							<br>maybe not tomorrow
+						</p>
+
+						<aside class="notes">
+							Right now the code is HTML5 compliant. 
+							<br>It's packed with divs that have inline styles
+							<br>* but you're supposed to keep your Edge Animations modular . 
+							<br>It's not an API, it's widgets your drop into other projects
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Reflow</h1>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="img/arrow-down.png" alt="Down arrow">
+						</a>
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h2>Demo</h2>
+						<h2><a href="http://html.adobe.com/edge/reflow/photoshop-plug-in.html" target="_blank">PSD to Reflow</a></h2>
+						<aside class="notes">
+							grid
+							<br>Breakpoints
+							<br>pixel spacing
+							<br>CSS based
+							<br>Insertion caret
+							<br>-PSD 2 Reflow. A video showing the app that lets you easily import a PSD and start slicing it up
+						</aside>
+					</section>
+					<section>
+						<h2>Trouble</h2>
+						<ul>
+							<li class="fragment">&#x2717; No JPG preview</li>
+							<li class="fragment">&#x2717; No complex shapes</li>
+						</ul>
+						<aside class="notes">
+							* Only export to HTML (it gives you a warning that it should not be used for production sites)
+							<br>* It's much better to import your graphic elements from PhoSho and place them in Reflow
+						</aside>
+					</section>
+					<section>
+						<h2>Target Audience</h2>
+						<p>Designer/Dev teams</p>
+						<ul class="fragment">
+							<li>Common lexicon</li>
+							<li>Less back-and-forth</li>
+							<li>Basically a fancy wireframe</li>
+						</ul>
+						<aside class="notes">
+							I think this is for designer/dev teams as an inbetween step from PSD to HTML
+							<br>* The fact that you can get all of that CSS and data interactive states, padding, margin, border size)
+							<br>means everyone knows exactly where to look 
+							<br>You get to developing faster
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Inspect</h1>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="img/arrow-down.png" alt="Down arrow">
+						</a>
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h3><a href="chrome-extension://ijoeapleklopieoejahbpdnhkjjgddem/firstrun.html" target="_blank">Setup</a></h3>
+						<h2>Demo</h2>
+						<ul>
+							<li class="fragment">Screenshots from all devices </li>
+							<li class="fragment">Remote inspect</li>
+							<li class="fragment">Integration with Reflow</li>
+							<li class="fragment">Live edits through Edge Code </li>
+						</ul>
+						<aside class="notes">
+							! Show the setup infographic before the actual demo - chrome-extension://ijoeapleklopieoejahbpdnhkjjgddem/firstrun.html
+							<br>Sync your device to your browser. It follows along.
+							<br>* Screenshots = easy bug testing
+							<br>* remote insect
+							<br>* Extra features: Live testing with Reflow while you work on design 
+							<br>* and live edits through edge code (the same as Live Reload)
+						</aside>
+					</section>
+					<section>
+						<h2>Requirements</h2>
+						<ul>
+							<li>Only works in Chrome</li>
+							<li>Desktop app, chrome app, mobile app (iOS, android, Kindle Fire) </li>
+						</ul>
+						<aside class="notes">
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Muse</h1>
+						<p>
+							&ldquo; Allows designers to create HTML websites for desktop and mobile devices without writing code.
+						</p>
+						<p class="fragment">Dreamweaver is still in development</p>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="img/arrow-down.png" alt="Down arrow">
+						</a>
+						<aside class="notes">
+							That description is really important. 
+							<br>This is a tool that lets you build websites without knowing how to code. Sound familiar? 
+							<br>(sounds like Dreamweaver)
+							<br>* Adobe is still working on Dreamweaver
+						</aside>
+					</section>
+					<section>
+						<h2>Dreamweaver without the code box</h2>
+						<img src="img/catbox.jpg" alt="Catbox!">
+						<p class="fragment">Build sites like you're in PhoSho / InDesign</p>
+						<p class="fragment">Free hosting on <a href="http://www.businesscatalyst.com/" target="_blank">Adobe Business Catalyst</a></p>
+
+						<aside class="notes">
+							<br>* Visually build sites
+							<br>-&gt;Demo: 
+							<br>Modes: Plan, design, preview, publish
+							<br>Master pages, like inDesign, are inherited by other pages
+							<br>Define where the header and footer start through guides
+							<br>Place interactive elements (Google Maps widget or import from Animate)
+							<br>Modules for parallax and scroll activated animation, dynamic loading, content swapping...
+							<br>Widgets: menus, can be styled
+							<br>* Free hosting
+						</aside>
+					</section>
+					<section>
+						<h2>Quality?</h2>
+						<p class="fragment">Class and ID heavy</p>
+						<p class="fragment">but comparable to a framework like Foundation or Bootstrap </p>
+						<p class="fragment">Business Catalyst works as a CMS</p>
+						<p class="fragment"><a href="http://muse.adobe.com/site-of-the-day" target="_blank">Site of the Day</a></p>
+
+						<aside class="notes">
+							* As you would expect, there's tons of classes and IDs
+							<br>* but you could get that same unsemantic cruft if you're using a framework
+							<br>* BC as a CMS. Lets you update meta, track analytics
+							<br>- when you make a change online, before you push from Muse it will ask you to merge
+							<br>* -&gt; Site of the day
+							<br>Target - clean design
+							<br>Hermen eicke cafe - interactive features
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Let's discuss</h2>
+					<div class="fragment">
+						<h3>&amp; beer!</h3>
+						<ul>
+							<li>Is Adobe worth the $$ vs free tools (Gimp, Sketch, Acorn, Macaw)</li>
+							<li>Can these benefit your workflow</li>
+							<li>Will Adobe keep supporting Animate</li>
+							<li>Are drag-n-drop / Muse sites okay? Or should site makers know how to code - <a href="http://fencsd.businesscatalyst.com/index.html" target="_blank">http://fencsd.businesscatalyst.com/index.html</a></li>
+						</ul>
+						<p>&nbsp;</p>
+						<p>
+							<a href="http://azanebrain.github.io/slides-adobeedge/" target="_blank">azanebrain.github.io/slides-adobeedge</a>
+						</p>
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
