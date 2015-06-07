@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bracesless WordPress - A Presentation by AJ Zane for WordCamp Orange County 2015</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/zane.css" id="theme">
+		
+		<style>
+		body{
+			background-color: #c8e4c1;
+			color: #123622;
+		}
+		a{
+			color: #b11030;
+		}
+			section img.logo-image {
+				background: none;
+				border: none;
+				vertical-align: middle;
+				width: 15%;
+			}
+			section img.logo-image-wide {
+				max-height: 90px;
+				width: inherit;
+			}
+		</style>
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="-webkit-text-stroke: 5px #000;">Bracesless WordPress</h1>
+					<img src="img/forrest-run-child-2.gif" alt="">
+					<p>
+						<small>A Presentation by AJ Zane (@azanebrain)
+						<br>for WordCamp Orange County 2015</small>
+					</p>
+					<p><small><a href="http://azanebrain.github.io/braceslesswp" target="_blank">azanebrain.github.io/braceslesswp</a></small></p>
+				</section>
+
+				<section>
+					<h2>Are you lazy?</h2>
+					<img src="img/forrest-pensive.gif" alt="">
+					<aside class="notes">
+						NOTES
+					</aside>
+				</section>
+
+				<section>
+					<h2>What I'll be covering</h2>
+					<p><em>(how to be lazy)</em></p>
+					<div class="fragment">
+						<p>1: The benefits of preprocessors</p>
+						<p>2: Getting setup <em>(quick overview)</em></p>
+						<p>3: Why it makes sense with WP</p>
+						<h3>
+							resources: <a href="http://azanebrain.github.io/braceslesswp" target="_blank">ow.ly/NNvIL</a>
+							<br><a href="http://azanebrain.github.io/braceslesswp" target="_blank">azanebrain.github.io/braceslesswp</a>
+						</h3>
+					</div>
+					<aside class="notes">
+						NOTES
+					</aside>
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Benefits of Preprocessors</h2>
+						<img src="img/forrest-beutiful.gif" alt="">
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h2>Definition</h2>
+						<h3>
+							<br><em>trimmed down code</em>
+							<br>that will be compiled to
+							<br><em>PHP, CSS, JS, etc</em>
+						</h3>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section data-background="img/logos.jpg">
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<p>Vanilla PHP:</p>
+						<pre><code class="php">&lt;?php $title = 'Bracesless WordPress'; &gt;
+<h1 class="title">
+	&lt;?php echo $title; ?>
+</h1>
+<div id="content">
+	<p>My fingers hurt...</p>
+</div>
+						</code></pre>
+						<p>Precompiled:</p>
+						<pre><code class="jade">- title = 'Bracesless WordPress';
+h1.title
+	= title
+#content
+	p This is much better
+		| include _smiley-face.jade
+						</code></pre>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Getting Setup</h2>
+						<img src="img/forrest-handshake.gif" alt="">
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h2>Task Runner (brought to you by Node)</h2>
+						<div class="fragment">
+							<p>Easy to setup</p>
+							<p>Easy to share</p>
+						</div>
+						<div class="fragment">
+							<p>Free</p>
+							<img src="./img/forrest-icecream.gif" alt="">
+						</div>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<p>Installing Node</p>
+						<p>
+							<em>brew install node</em>
+							<br>OR<br>
+							<a href="https://nodejs.org/download">nodejs.org/download</a>
+						</p>
+						<div class="fragment">
+							<br>
+							<p>Using NPM:</p>
+							<p> <em>npm install node-sass</em> </p>
+						</div>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h2>Task Runners</h2>
+						<img src="img/logo-grunt.png" class="logo-image" alt="Grunt">
+						<img src="img/logo-broccoli.png" class="logo-image" alt="Grunt">
+						<img src="img/logo-gulp.png" class="logo-image" alt="Grunt">
+						<img src="img/logo-brunch.png" class="logo-image" alt="Grunt">
+						<br>
+						<img src="img/logo-cake.png" class="logo-image logo-image-wide" alt="Grunt">
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h2>I choose...</h2>
+						<div class="fragment">
+							<p>IDE that's right for you</p>
+							<p><em>Syntax Highlighting</em></p>
+						</div>
+						<div class="fragment">
+							<p>Choose a Task Runner based on its mascot</p>
+							<p><em>You <strong>will</strong> switch</em></p>
+						</div>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h2>File organization</h2>
+						<pre><code class="bash">┬ dist/
+| ├ app.js
+| ├ index.php
+| └ style.css
+├ lib/
+├ src/
+| ├ app.coffee
+| ├ index.jade
+| ├ style.sass
+├ .git
+├ .gitignore
+├ Gulpfile.coffee
+├ package.json
+└ README.md
+						</code></pre>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h2>Browser Tools</h2>
+						<img src="img/chrome-enable-source-map.gif" alt="">
+						<p>Source maps == awesome</p>
+					</p>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h2>Starter boilerplates</h2>
+						<p>github.com/azanebrain/braceslesswp</p>					
+						<p><a href="http://azanebrain.github.io/braceslesswp" target="_blank">ow.ly/NNvIL</a></p>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<h2>What can you do with <br>Bracelss WordPress</h2>
+						<img src="img/forrest-thingstodowithshrimp.gif" alt="">
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+				<section>
+
+					<section>
+						<h2>But I'm a super not-lazy person</h2>
+						<h3><em>complaints</em></h3>
+						<img src="img/forrest-drpepper.gif" alt="">
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h3>The team has to learn a new language</h3>
+						<p class="fragment">Precompiled syntaxes are simpler than vanilla code</p>
+						<p class="fragment">The learning curve is a matter of forgetting, not learning</p>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h3>Setup takes too long</h3>
+						<p class="fragment">"I want to get a new comp and be ready in 10min"</p>
+						<div class="fragment">
+							<p>NPM lets you do this</p>
+							<pre><code class="bash">npm install bubba-gump-shrimp</code></pre>
+						</div>
+						<p class="fragment">Don't sacrifice hours of dev time to get a new computer running in 10 minutes</p>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+					<section>
+						<h3>With great power...</h3>
+						<p class="fragment"><em>comes awesome super hero powers</em></p>
+						<p class="fragment">Adds a layer of complexibility</p>
+						<p class="fragment">These tools were not developed for WP theme/plugin development, so watch out</p>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section data-background="img/forrest-run-adult.gif">
+						<h2>TAKEHOMES</h2>
+						<p><em>azanebrain.github.io/bracelesswp</em></p>
+						<aside class="notes">
+							NOTES
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Go Ahead,</h2>
+					<h3>Ask me anything</h3>
+					<div class="center img-circle img-aj">&nbsp;</div>
+					<p><em>my name is AJ Zane</em></p>
+					<p><em>I can be found @azanebrain on all things</em></p>
+					<p><em>Front End Authority | Zan Atlantean | 2pointb</em></p>
+					<aside class="notes">
+						NOTES
+					</aside>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
