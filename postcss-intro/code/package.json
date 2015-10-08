@@ -1,0 +1,37 @@
+{
+  "name": "postcss-intro",
+  "version": "0.1.0",
+  "description": "Code samples for An Intro to POSTCSS",
+  "author": "AJ Zane <androiddreams@AJZane.com>",
+  "homepage": "https://azanebrain.github.io/presentations/postcss-intro",
+  "engines": {
+    "node": ">=v0.12.5"
+  },
+  "scripts": {
+    "build": "echo \"Error: there is no build command specified\" && exit 1",
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "atcss": "^2.0.0",
+    "autoprefixer": "^6.0.3",
+    "css-mqpacker": "^4.0.0",
+    "gulp": "^3.9.0",
+    "gulp-atcss": "^0.2.0",
+    "gulp-cli": "^0.3.0",
+    "gulp-cssnano": "^2.0.0",
+    "gulp-cssnext": "^1.0.1",
+    "gulp-postcss": "^6.0.1",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/azanebrain/presentations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azanebrain/presentations/issues"
+  },
+  "private": true,
+  "license": "GPL2"
+}
