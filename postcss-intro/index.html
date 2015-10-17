@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>An Intro to POSTCSS ~ azanebrain</title>
+
+		<meta name="description" content="An introductory presentation to POSTCSS">
+		<meta name="author" content="AJ Zane">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>An Intro to POSTCSS</h1>
+					<h3></h3>
+					<p>
+						<small>Created by <a href="http://ajzane.com">AJ Zane</a> / <a href="http://twitter.com/azanebrain">@azanebrain</a></small>
+					</p>
+					<p>
+						<small>for <a href="http://FrontEndAuthority.org">Front End Authority</a></small>
+					</p>
+					<aside class="notes">I'm AJ Zane.
+						<br>- Gauge the audience's experience with CSS. Precompilers / POSTCSS / etc
+					</aside>
+				</section>
+
+				<section>
+					<h2>CSS on day 1</h2>
+<pre><code>#myDiv {
+	color: red;
+}
+/* This is easy. I'm happy. */
+</code></pre>
+					<p>A simple <i>non-language</i> that just worked</p>
+					<aside class="notes">
+						I've been writing CSS for a very long time.
+						<br>In the beginning it was very straight forward and happy syntax that make sites look cool
+					</aside>
+				</section>
+
+				<section>
+					<h2>... becomes:</h2>
+<pre><code>/* THIS IS INSANE! 
+	WHAT HAPPENED TO MY LIFE!? */
+.wrapper {
+	/* TODO: Extend clearfix */
+	width: 100%; max-width: 980px;
+}
+.headline, .headline-special {
+	float: left; font-size: 2rem;
+} 
+.headline-special {
+	/* wait.. are we using this anymore? */
+	text-align: center;
+}
+@media screen and (min-width: 769px) {
+	.wrapper {
+		background-color: #ccc; width: 95%;
+	}
+	.headline {
+		font-size: 1.5rem; line-spacing: 1.1rem;
+	}
+}
+</code></pre>
+					<p>The map of an inanimate space through time</p>
+					<aside class="notes">
+						But then you get comfortable with it and you decide to add rounded corners, and media queries, and clear fixes...
+						<br>- Before you know it, you're defining the visual layer of how an inanimate space will operate through time
+					</aside>
+				</section>
+				
+				<section>
+					<h2>The Front Ender's Solution:</h2>
+					<p>"Use the tools you have <br>to get around the problems <br>caused by your other tools."</p>
+					<ul>
+						<li>PHP scripting</li>
+						<li>UX Frameworks</li>
+						<li>Precompilers</li>
+					</ul>
+					<aside class="notes">
+						Front end developers, being the tinkerers that we are, used our existing tools to get around the limitations of CSS
+						<br>- I wrote in PHP for scripting perks
+						<br>- Frameworks help to standardize practices
+						<br>- Right now we've landed on precompilers
+					</aside>
+				</section>
+
+				<section>
+					<h2>Precompilers work great</h2>
+					<p>Provide perks of scripting languages (variables, loops, functions, etc...)</p>
+					<p class="fragment">Is it time for something new?</p>
+					<p class="fragment"><i>Probably</i> 
+						<br>(╯°□°）╯︵ ┻━┻</p>
+					<aside class="notes">
+						Over the past 3-ish years precopmilers have been great. 
+						<br>-Introduced standardized scripting concepts
+						<br>* Is it time for something new?
+						<br>* Probably.
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>What's so good about POSTCSS?</h2>
+						<p>"PostCSS is a tool for transforming styles with JS plugins. These plugins can support variables and mixins, transpile future CSS syntax, inline images, and more." ~ <a href="https://github.com/postcss/postcss">GitHub.com/postcss/postcss</a></p>
+						<br>
+						<p>If it's not broken, don't fix it, right?</p>
+						<aside class="notes">
+							So what's so good about POSTCSS?
+							<br>- I like the 'dont fix it' saying. Mainly because I'm lazy, but it is true
+						</aside>
+					</section>
+					
+					<section>
+						<h2>JS Everywhere</h2>
+<pre><code>JSON: { "colorList": {
+  "c1"  : ["#000000", "#000011"],
+  "c2"  : ["#000011", "#000022"],
+} }
+</code></pre>
+<pre><code>Node: var categories = require('./data/cat-colors.json');
+var dataloop = function(css) {
+    for ( var category in categories.colorList ) {
+        var colorSet = categories.colorList[category];
+        var borderTop = colorSet[0];
+        var borderBottom = colorSet[1];
+        var rule = corepostcss.rule({ selector: '.cat-' + category });
+        rule.append({ prop: 'border-top', value: '1px solid ' + borderTop});
+        rule.append({ prop: 'border-bottom', value: '1px solid ' + borderBottom + ";"});
+        css.append(rule);
+    }
+};
+</code></pre>
+<pre><code>CSS: .cat-c1 {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000011;
+}
+</code></pre>
+						<aside class="notes">
+							Since JavaScript everywhere is the new hotness, lets do CSS in JS
+							<br>-This example uses a JSON file to create categorized CSS classes
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Modular (NPM)</h2>
+						<p><a href="http://postcss.parts/" target="_blank">postcss.parts</a></p>
+						<p>"Bugfixes are pushed often. Minor changes won't break your code. Major releases are, well, major and are not supposed to happen a lot. Codebase is exploded into smart and standalone packages so it's easier to work on something or fix a bug." ~ cssnext.io</p>
+						<ul>
+							<li>AutoPrefixer: Handle browser prefixes for select browsers</li>
+							<li>CSSNext: Use future CSS concepts today</li>
+							<li>AtCSS: Extending, importing</li>
+							<li>CSSNano: Really good optimization</li>
+							<li>PreCSS: Sass-like support</li>
+							<li>RuckSack: jQuery like CSS utilities</li>
+							<li>StyleLint: CSS linting</li>
+						</ul>
+						<aside class="notes">
+							But why write your own when there's a plugin that already does that?
+						</aside>
+					</section>
+					
+					<section>
+						<p>Faster than libsass</p>
+						<p>Media query organization</p>
+						<p>Z-Index rebasing</p>
+						<p>Vertical rhythm</p>
+						<p>Fits into any workflow:</p>
+						<p>gulp, grunt, broccoli, webpack,</p>
+						<p>terminal, codekit</p>
+						<aside class="notes">
+							Here's even more cool perks.
+						</aside>
+					</section>
+					
+				</section>
+				
+				<section>
+					<section>
+						<h2>Should you change <em>now</em>?</h2>
+						<p class="fragment">... maybe?</p>
+						<aside class="notes">
+							So the big question is: Refactor all of your projects right now to use this?
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Take a slow approach</h2>
+						<p>Autoprefixer</p>
+						<p>Evaluate the necessities of your stack</p>
+						<p>Add modules when the need arises</p>
+						<aside class="notes">
+							I think POSTCSS's approach is the future for front end development
+							<br>-Start w autoprefixer because it's really useful
+							<br>- Take some time and evaluate your stack. This is a great opportunity to rip out extra fluff and start fresh on a stonger framework
+						</aside>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Thanks!</h2>
+					<p>I'm <a href="http://ajzane.com">AJ Zane</a> (<a href="http://twitter.com/azanebrain">@azanebrain</a>)</p>
+					<br>
+					<p>Check out POSTCSS</p>
+					<p><a href="https://github.com/postcss/postcss">GitHub.com/postcss/postcss</a></p>
+					<br>
+					<p><small><a href="http://frontendauthority.org">FrontEndAuthority.org</a></small></p>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,59 @@
+/* This is my CSS File */
+
+/* CSS Next */
+/* Variables */
+
+:root {
+  --mainColor: red;
+}
+
+a {
+  color: var(--mainColor);
+}
+
+/* Base definitions */
+html, body {
+  padding: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Empty definition */
+body {}
+  
+/* Modules */
+.box {
+  box-sizing: border-box;
+}
+/* Repeated element */
+.box {
+  /* Optimize */
+  min-width: calc(2 * 100px);
+}
+.text-black {
+  color: black;
+}
+/* Duplicate */
+.box {
+  min-width: calc(2 * 100px);
+}
+
+@media screen and (min-width: 769px) {
+  .box {
+    width: 80%;
+  }
+}
+/* invalid placement */
+@charset "utf-8";
+  
+.panel {
+  border-color: green;
+}
+
+@media screen and (min-width: 769px) {
+  .panel {
+    border-color: red;
+  }
+}
+/* Repeated @charset */
+@charset "utf-8";
