@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Using WP to Power an Ionic App</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		
+		<style>
+			div.center {
+				margin: 0 auto;
+			}
+			div.img-circle{
+				border: solid 4px #eee;
+				border-radius: 150px;
+				-webkit-border-radius: 150px;
+				-moz-border-radius: 150px;
+				width: 300px;
+				height: 300px;
+			}
+
+			.img-aj {
+				background-image: url('img/AJZane-pic.jpg');
+				background-position-y: -30px;
+				background-size: 100%;
+			}
+			
+			img.img-gallery {
+				float:left; 
+				max-height:400px;
+				max-width:400px; 
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section>
+					<h1 style="-webkit-text-stroke: 5px #000;">Technical Intro <br>to Ionic</h1>
+					<div class="img-circle img-aj center">&nbsp;</div>
+					<p>
+						<small>A Presentation by AJ Zane (<a href="https://twitter.com/azanebrain">@azanebrain</a>)</small>
+					</p>
+					<p><small><a href="http://azanebrain.github.io/presentation/ionic-intro" target="_blank">azanebrain.github.io/presentation/ionic-intro</a></small></p>
+				</section>
+
+				<section>
+					<section data-background="img/repme-being-used.jpg" style="background-color:rgba(0,0,0,.5);">
+						<h1>Hybrid App</h1>
+						<p>Uses the same codebase to provide the same interface across devices</p>
+						<p>Like responsive web design but with more pizzazz</p>
+						<aside class="notes">
+							An important point here is that 'hybrid' doesn't mean 'iOS and Android'. It expands across devices and browsers
+						</aside>
+					</section>
+					<section data-background="img/repme-being-used.jpg" style="background-color:rgba(0,0,0,.5);">
+						<iframe class="youtube-player" id="player" type="text/html" src="http://www.youtube.com/embed/OvwXv8JSmgw?autohide=1&autoplay=0&enablejsapi=1" frameborder="0" muted="muted" width="500" height="500" style="margin-top: -10%;"></iframe>
+						<h3>Represent Me</h3>
+						<p>Uses actual legislation data to compare your stance on topics against our current representatives to help citizens decide who to vote for.</p>
+						<p>Uses WordPress for data &amp; Ionic for the front end</p>
+						<script>
+								var tag = document.createElement('script');
+					      tag.src = "http://www.youtube.com/player_api";
+					      var firstScriptTag = document.getElementsByTagName('script')[0];
+					      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+					      // 3. This function creates an <iframe> (and YouTube player)
+					      //    after the API code downloads.
+					      var player;
+					      function onYouTubePlayerAPIReady() {
+					        player = new YT.Player('player', {
+					          playerVars: { 'autoplay': 0, 'controls': 1,'autohide':1 },
+					          videoId: 'OvwXv8JSmgw',
+					          events: {
+					            'onReady': onPlayerReady}
+					        });
+					      }
+					      // 4. The API will call this function when the video player is ready.
+					      function onPlayerReady(event) {
+					        event.target.mute();
+					      }
+						</script>
+						<aside class="notes">
+							In November, I took part in a weekend hackathon
+							<br>The team I worked with created Rep Me
+							<br>* This was the first hybrid app I've built and Ionic's unique position as a web tool is what allowed me to deliver
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3><a href="http://ionic.io">http://ionic.io</a></h3>
+						<p>
+							<small>A really useful tool to make hybrid apps</small>
+						</p>
+						<p class="fragment">HTML / CSS / JS + a little Angular</p>
+						<p class="fragment">CLI Tool: Add and configure libraries, track logs, integrate with services, EMail test versions to anyone, Plugs into your build tools (grunt, gulp, npm, etc)...
+						</p>
+						<aside class="notes">
+							Ionic is a single page web application that comes with all of the tools to package itself up as a mobile app
+							<br>* If you're an Angular developer, you're set. If not, take some time to figure out if you can afford the learning curve
+							<br>* CLI tool (feels like a normal web project)
+						</aside>
+					</section>
+					<section>
+						<h3>It's a busy space</h3>
+						<p>
+							Cordova / PhoneGap
+							<br>Polymer
+							<br>NativeJS
+							<br>React Native
+							<br>Titanium
+							<br>Famo.us
+							<br>Sencha Touch
+							<br>...
+						</p>
+						<aside class="notes">
+							Compared to the other tools that are out there, and those that will surface in the coming year, the differences come down to personal preference
+							<br>I like Ionic cuz I'm an Angular dev
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Why does Represent Me use WordPress for the data layer?</h1>
+						<aside class="notes">
+							I'm sure you're all wondering about how I came to use a LAMP stack CMS to power a mobile app
+							<br>Before I get into that, I want to talk about some of hte other options
+						</aside>
+					</section>
+					<section>
+						<h3>The data's coming</h3>
+						<h3><small>from inside the app!</small></h3>
+						<code><pre class="javascript">
+$scope.events = [
+  { title: 'Hands on with Ionic', id: 1 },
+  { title: 'Developing for Design', id: 2 },
+  { title: 'An intro to POST CSS', id: 3 },
+  { title: 'Atomic Design basics and open mic', id: 4 },
+  { title: 'Open Mic Night', id: 5 },
+  { title: 'Share your project / Lightning talks', id: 6 }
+];
+						</pre></code>
+						<p class="fragment">But we don't deal in static sites</p>
+						<aside class="notes">
+							The easiest way to store your data is within the app. 
+							<br>* Like a static website from the 90s
+						</aside>
+					</section>
+					<section>
+						<h3>3rd Party APIs</h3>
+						<p>Ionic is a web tool. You can pull in data from any service </p>
+						<ul class="fragment">
+							<li>Meetup API to get live event info</li>
+							<li>The temperature gauge at the top of Bear Mountain</li>
+							<li>Get a push notification if your site crashes</li>
+							<li>Update your store app with sales</li>
+						</ul>
+						<aside class="notes">
+							At its core Ionic is a *web* application tool. Anything we can do with a website, we can now do in an app
+							<br>Tonight we'll be using Meetup's API
+							<br>* Examples / brain food
+						</aside>
+					</section>
+					<section>
+						<h3>1st Party APIs</h3>
+						<p>Build our own service</p>
+						<aside class="notes">
+							As a web developer, you have full control over your own data. 
+							<br>Pass along any data your site can gather
+							<br>As a WP dev, I gravitated towards making my site be the engine that passes data to my app
+						</aside>
+					</section>
+					<section>
+						<h3><a href="https://wordpress.org/plugins/json-rest-api/">WP JSON REST API</a></h3>
+						<p class="fragment">Custom data types, meta, and user handling</p>
+						<p class="fragment">Easy for anyone to update content</p>
+						<p class="fragment">Plugin data can be accessed through endpoints (<a href="http://wp-api.org/guides/extending.html ">wp-api.org/guides/extending.html</a>)</p>
+						<p class="fragment">You get a free website if you need it</p>
+						<aside class="notes">
+							For WP, there is the REST API plugin. It provides all of the contents of the WP site as JSON data
+							<br>* WP already has complex data structures. It's all free
+							<br>* During the hackathon I was able to push the data entry off to my teammates while I focused on the code.
+							<br>* Plugin library: Let other people invent the wheel
+							<br>* Same site for marketing and app: COPE
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section data-background="img/ionicserve.gif" style="background-color:rgba(0,0,0,.5);">
+						<h3>Super easy to setup</h3>
+						<p>Install Ionic from the command line:</p>
+						<pre><code class="bash">
+npm install -g cordova ionic
+ionic start {appname} {template}
+cd {appname}
+ionic platform add ios
+ionic platform add android
+ionic serve
+						</code></pre>
+					</section>
+					<section>
+						<h3>Super easy to setup</h3>
+						<p>Get Ionic talking to WordPress</p>
+						<pre><code class="bash">
+diff --git a/www/index.html b/www/index.html
+
+     <script src="lib/ionic/js/ionic.bundle.js"></script>
++    <script src="lib/ionic/js/angular/angular-resource.min.js"></script>
+
+     <!-- cordova script (this will be a 404 during development) -->
+
+
+diff --git a/www/js/app.js b/www/js/app.js
+
+ // 'starter.controllers' is found in controllers.js
+-angular.module('starter', ['ionic', 'starter.controllers', 'ui.router'])
++angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'ngResource'])
++
++.factory('resources', function($resource) {
++  var url = 'http://representmenow.co/wp-json';
++  return {
++    'posts': $resource(url + '/posts'),
++  };
++})
+
+.run(function($ionicPlatform) {
+	
+	
+diff --git a/www/js/controllers.js b/www/js/controllers.js
+
++  // Get the post data
++  resources.posts.query({
++    'type[]': 'legislation',
++    'filter[status]': 'publish',
++    'filter[order]': 'DESC',
++  },
++  function(posts) {
++    // Success callback
++    $scope.legislations = posts;
++  },
++  function(error) {
++    // Error callback
++    console.warn('An error occured:',error);
++    $scope.posts = [{
++      title: 'Error',
++      content: error.data[0].message,
++    }];
++  });
+
+
+diff --git a/www/templates/legislation.html b/www/templates/legislation.html
+
+<ion-view view-title="Legislation">
+<ion-content>
+- Content will go here
++ <ion-list>
++  <ion-item ng-repeat="legislation in legislations" href="#/app/legislation/{{legislation.ID}}">
++   <span ng-bind-html="legislation.title"></span>
++  </ion-item>
++ </ion-list>
+</ion-content>
+	
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>Modular Design Components</p>
+						<p><a href="http://ionicframework.com/docs/components">IonicFramework.com/docs/components</a></p>
+						<img src="img/ionui-vertcol.png"  class="img-gallery" style="margin-right: 10px;" alt="">
+						<img src="img/ionui-card.png" class="img-gallery" style="margin-right: 10px;" alt="">
+						<img src="img/ionui-input.png" class="img-gallery" alt="">
+						<img src="img/ionui-range.png" class="img-gallery" alt="">
+						<aside class="notes">
+							Similar to Bootstrap, Ionic comes with a really sleek UI library
+						</aside>
+					</section>
+					<section>
+						<img src="img/ionui-toggle.png"  class="img-gallery" alt="">
+						<img src="img/ionui-col.png"  class="img-gallery" alt="">
+						<img src="img/ionui-avatar.png"  class="img-gallery" alt="">
+						<img src="img/ionui-buttons.png"  class="img-gallery" alt="">
+					</section>
+					<section>
+						<p>Familiar CSS classes</p>
+						<pre><code>
+<button class="button button-large button-positive">Large Button</button>
+						</code></pre>
+						<pre><code>
+<div class="card">
+  <div class="item item-text-wrap"> This is a basic Card which contains an item that has wrapping text. </div>
+</div>
+						</code></pre>
+						<aside class="notes">
+							Here is some example code from those examples
+						</aside>
+					</section>
+					<section>
+						<p>A few custom elements</p>
+						<pre><code>
+<ion-view view-title="Home">
+  <ion-content>
+    <h1>Front End Authority App</h1>
+    <p>Hello, World!</p>
+  </ion-content>
+</ion-view>
+						</code></pre>
+						<pre><code>
+<ion-nav-view></ion-nav-view>
+						</code></pre>
+						<aside class="notes">
+							The structure of everything was so simple that I not only got up and running in a weekend, but I was able to pivot the Rep Me project halfway through
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>AngularJS</h3>
+						<p>With great power</p>
+						<p class="fragment">comes great learning curves</p>
+						<aside class="notes">
+							*
+							<br>I'm not going to lie. Angular is hard. Especially if you aren't used to MVC. 
+							<br>But once it clicks, like all of web dev, it is really powerful
+						</aside>
+					</section>
+					<section>
+						<h3>Custom directives</h3>
+						<pre><code>
+<ion-nav-view></ion-nav-view>
+						</code></pre>
+						<pre class="fragment"><code>
+<meetup-events desc="true"></meetup-events>
+						</code></pre>
+						<aside class="notes">
+							One of the core concepts of Angular is custom directives. Basically, they're just spaces where you can inject templated code
+							<br>* We could make a shortcut to show all the meetup events
+							<br>And pass attributes to it
+						</aside>
+					</section>
+					<section>
+						<h3>Great platform for S.P.A<small>s</small></h3>
+						<pre><code>
+angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])	
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
+  })
+  .state('app.home', {
+    url: '/home',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html'
+      }
+    }
+  })
+  .state('app.events', {
+    url: '/events',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/events.html',
+        controller: 'EventsCtrl'
+      }
+    }
+  })
+  .state('app.event', {
+    url: '/events/:eventId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/event.html',
+        controller: 'EventCtrl'
+      }
+    }
+  });
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/home');
+});
+
+						</code></pre>
+						<aside class="notes">
+							It's perfect for dynamic, single page apps. 
+							<br>This routing example from the demo shows how much control you have over the state of the app
+							<br>Control the logic and variables per view
+						</aside>
+					</section>
+				</section>
+				<section>
+					<h3>ngCordova</h3>
+					<p>Hybrid app plugin library for AngularJS</p>
+					<p><a href="http://ngcordova.com/">ngCordova.com</a></p>
+					<p>
+						barcode scanner, camera, device motion,
+						<br>device orientation, file, 
+						<br>geolocation, network, social sharing,
+						<br>status bar, vibration
+						<br>...
+					</p>
+					<aside class="notes">
+						The last awesome thing about Ionic is that it integrates REALLY well with ngCordova
+						<br>A plugin library that gives you access tons of native phone features through JS
+					</aside>
+				</section>
+				<section>
+					<section data-background="img/repme-being-used.jpg" style="color:#000;">
+						<p>Thanks!</p>
+						<p><small>Now lets code</small></p>
+					</section>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
