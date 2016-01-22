@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Using WP to Power an Ionic App</title>
+		<title>Technical Intro to Ionic</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -441,6 +441,141 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
 					<section data-background="img/repme-being-used.jpg" style="color:#000;">
 						<p>Thanks!</p>
 						<p><small>Now lets code</small></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Hands on with Ionic</h1>
+					</section>
+					<section>
+						<h3>The plan:</h3>
+						<p>Make an app for Front End Authority</p>
+						<aside class="notes">
+							I figured this will be a great opportunity for you all to get hands on experience.
+							<br>Because you'll all be working on a similar idea, you'll be able to compare and help each other out
+							<br>I'll introduce some concepts, then let you guys hack on them in groups.
+							<br>I’ll have some challenges for you, some idea starters, but let loose and do whatever you want
+						</aside>
+					</section>
+					<section>
+						<h3>Where to go to learn more</h3>
+						<p><a href="http://ionicframework.com/docs/guide">http://ionicframework.com/docs/guide</a></p>
+						<p><a href="http://docs.ionic.io">http://docs.ionic.io</a></p>
+						<p><a href="http://learn.ionicframework.com/formulas">http://learn.ionicframework.com/formulas</a> </p>
+						<aside class="notes">
+							Yes, there are 2 official documentation sites. 
+							<br>Ionic Framework is the core docs
+							<br>Ionic IO is the service
+							<br>They both have good info so check them both out.
+						</aside>
+					</section>
+					<section>
+						<h1>-- BREAK 1 --</h1>
+						<aside class="notes">
+							Break up into groups
+							<br>Who has a computer? Move those people to separate tables
+							<br>Who has a little Ionic or Angular exp? Split yourselves up into different groups
+						</aside>
+					</section>
+					<section>
+						<h3>Folder Structure</h3>
+						<ul>
+							<li>HOOKS: Custom actions taken as your app moves through the Cordova development process</li>
+							<li>MERGES: Overrides for specific platforms</li>
+							<li>PLATFORMS: Contains the core files for native environments (avoid unless you're doing custom native hacking!!)</li>
+							<li>PLUGINS: Extra packages for the native apps</li>
+							<li>RESOURCES: Platform specific asset files</li>
+							<li>SCSS: Precompiled CSS</li>
+							<li>ROOT FILES: config.xml, bower and gulp, ionic.project, package.json</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Folder Structure 2: www/</h3>
+						<ul>
+							<li>CSS: Styles</li>
+							<li>IMG: Images</li>
+							<li>JS: JavaScript</li>
+							<li>LIB: Where Ionic and any other libraries you want to use can be placed. Follows Bower formatting</li>
+							<li>TEMPLATES: Views and includes (pages)</li>
+							<li>Index.html: The main page for your Single Page App</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Data Requirements</h3>
+						<p><a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en">CORS</a></p>
+						<aside class="notes">
+							I covered 3 ways to get data into the app, but the best is using actual Meetup data.
+							<br>There's a chance you'll need a CORS addon in your browser
+							<br>If it causes a lot of problems, you can uncomment the static data and use that
+						</aside>
+					</section>
+					<section>
+						<h1>-- BREAK 2 --</h1>
+						<p>Brainstorm what your app will do and get started</p>
+						<p>Challenges:</p>
+						<ul>
+							<li>Use Ionic Components to create a list or cards for the events</li>
+							<li>Follow the routing structure in www/app.js to add some more pages</li>
+						</ul>
+						<p>Resources:</p>
+						<li><a href="http://ionicframework.com/docs/components/">ionicframework.com/docs/components/</a></li>
+						<aside class="notes">10-15m</aside>
+					</section>
+					<section>
+						<h3>Get sassy</h3>
+						<p>Styles are applied to the app in www/css/style.css</p>
+						<p>Add sass support from the command line with:</p>
+						<code><pre>ionic setup sass</pre></code>
+						<aside class="notes">
+							I don't suggest setting this up tonight, but figured I'd share how to setup sass for you to take home
+						</aside>
+					</section>
+					<section>
+						<h3>Data (continued)</h3>
+						<p>Data is requested from a server in an HTTP request</p>
+						<p>Meetup API Console lets you build the request and copy it as a shareable Signed URL: <a href="https://secure.meetup.com/meetup_api/console">secure.meetup.com/meetup_api/console</a></p>
+						<aside class="notes">
+							The Meetup API console lets you build your requests
+							<br>Show an example
+						</aside>
+					</section>
+					<section>
+						<h1>-- BREAK 3 (final)--</h1>
+						<p>Challenges:</p>
+						<ul>
+							<li>Add some Ionic utility classes to add some style to the app</li>
+							<li>Add custom styles to make your app look unique</li>
+							<li>Request more data from the Meetup API (event comments, member stats, etc)</li>
+							<li>Add a 'submit a topic' form</li>
+						</ul>
+						<aside class="notes">15-20min</aside>
+					</section>
+					<section>
+						<h3>Cool stuff to do next</h3>
+						<p class="fragment">Ionic View: Share and test your app - <a href="http://view.ionic.io/">view.ionic.io</a></p>
+						<p class="fragment">Testing - AngularJS is great at it</p>
+						<p class="fragment">Caching - Don't waste your user's data</p>
+						<p class="fragment">User Authentication</p>
+						<aside class="notes">
+							* Ionic View
+							<br>* testing
+							<br>* Caching
+							<br>* User Auth
+						</aside>
+					</section>
+					<section>
+						<h3>Reading and Resources</h3>
+						<ul>
+							<li><a href="http://ionicframework.com/docs/guide">http://ionicframework.com/docs/guide</a></li>
+							<li><a href="http://docs.ionic.io">http://docs.ionic.io</a></li>
+							<li><a href="http://learn.ionicframework.com/formulas">http://learn.ionicframework.com/formulas</a> </li>
+							<li><a href="http://learn.ionicframework.com/formulas/sharing-data-between-views/#">Sharing Data Between Views</a></li>
+							<li><a href="https://www.youtube.com/channel/UChYheBnVeCfhCmqZfCUdJQw ">Ionic YouTube Channel</a></li>
+							<li><a href="https://app.pluralsight.com/library/courses/building-mobile-apps-ionic-framework-angularjs/table-of-contents ">Pluralsight Course</a></li>
+						</ul>
+					</section>
+					<section data-background="img/repme-being-used.jpg" style="background-color:rgba(0,0,0,.5);">
+						<h1>DEMOS</h1>
 					</section>
 				</section>
 			</div>
