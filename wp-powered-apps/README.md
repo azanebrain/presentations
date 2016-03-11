@@ -18,6 +18,8 @@ Run: `npm start` then open [http://localhost:8000](http://localhost:8000).
 
 Hit `s` to enter presentation mode
 
+Or, run it with control on your phone by launching the slide with `node plugin/notes-server`, then going to your machine's IP with port 1947 [myip:1947/notes/]. Access the presentation slides on the machine at: http://localhost:1947/
+
 Build: `npm run build`
 
 Install: `npm i`

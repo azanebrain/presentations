@@ -50,14 +50,175 @@
 
 				<section>
 					<section>
-						<h2>Slide title</h2>
-						<p>Slide content.</p>
+						<h2>Hybrid apps are cool</h2>
+						<p>because we're inherently <s>lazy</s> <em>efficient</em></p>
 						<aside class="notes">
 							Notes
 						</aside>
 					</section>
-					<section>
+					<section data-background="./lib/img/lotr-onering.jpg">
+						<h1>One codebase to rule them all</h1>
+						<aside class="notes">
+							Write once, deploy everywhere
+							<br>
+							Usually, we imply that the code will run on Android and iOS. We lose some native performance, with the benefit of cutting our development time in half
+
+						</aside>
 					</section>
+					<section data-background="./lib/img/devices.jpg">
+						<aside class="notes">
+							But really , the hybrid app approach doesn't just cut our development time in half, but by many multiples. 
+							<br>The same code can run in the browser, on a Windows phone, a watch, a car, or the next weird smart home device that hits the market
+						</aside>
+					</section>
+					<section>
+						<h2>Ionic</h2>
+						<img src="./lib/img/logo-ionic.png" alt="Ionic Logo" width="400">
+						<p>HTML, CSS, (Angular)JS</p>
+						<aside class="notes">
+							Ionic is great because with very little overhead you can access your site's content and display it w native-like elements coded in HTML, CSS, and JS
+							<br>I also write angular all day so it's nice not having to switch gears
+						</aside>
+					</section>
+					<section data-background="">
+						<h2>WP is a step away</h2>
+						<img src="./lib/img/wp-ionic-material.gif" alt="">
+						<h2>Device features are closer</h2>
+						<aside class="notes">
+							 All of the benefits we get making themes and plugin in WP are now a step away. 
+							 <br> Every feature you want to pull into the app, like custom fields, user authenticatiom, etc you'll have to decide if you're going to write your own connector, or find a plugin
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Prepping your site</h2>
+						<p><a href="http://torquemag.io/2014/11/preparing-wordpress-site-power-single-page-web-app/" target="_blank">Torque Mag: Preparing WordPress to Power A Single Page Web App</a></p>
+						<ul>
+							<li>CORS</li>
+							<li>Limiting the default number of posts returned to prevent accidental DDOS</li>
+							<li>Making pagination queryable in GET requests</li>
+							<li>Creating a REST API cache library</li>
+							<li>Creating custom endpoints (menu example)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Custom Field meta from ACF</h2>
+						<pre><code>if( function_exists('get_fields') ){
+  // Add ACF field data to the WP-API
+  function wp_api_encode_acf($data,$post,$context){
+    $custom_fields_exist = get_fields($post['ID']);
+    if ($custom_fields_exist) {
+    $data['meta'] = array_merge($data['meta'], get_fields($post['ID']));
+    }
+    return $data;
+  }
+  add_filter('json_prepare_post', 'wp_api_encode_acf', 10, 3);
+}
+						</code></pre>
+						<p><a href="https://wordpress.org/plugins/wp-rest-api-custom-fields/" target="_blank">WP REST API Custom Fields plugin</a></p>
+					</section>
+					<section>
+						<h2>Querying</h2>
+						<pre><code>angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'ngResource'])
+.factory('resources', function($resource) {
+  var url = 'http://mysite.com/wp-json';
+  return {
+    'posts': $resource(url + '/posts'),
+  };
+})
+						</code></pre>
+
+						<pre><code>resources.posts.query({
+  'type[]': 'custom-post-type',
+  'filter[status]': 'publish',
+  'filter[order]': 'DESC',
+},
+						</code></pre>
+					</section>
+					<section>
+						<h2>User Authentication</h2>
+						<p><a href="https://auth0.com/authenticate/ionic/wordpress" target="_blank">auth0</a></p>
+						<p><a href="https://wordpress.org/plugins/json-api-user/" target="_blank">JSON User API plugin</a></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>What we lose from PHP</h1>
+						<h2>we gain from the device</h2>
+						<aside class="notes">
+							So far, it seems like adding the REST API causes more trouble than good since we have to add all these hoops just to get back our basic WP functionality
+							<br>But now a whole world is opened up
+						</aside>
+					</section>
+					<section>
+						<h2>Request content anywhere</h2>
+						<p>Postman</p>
+						<p>JSON Formatter extension in your favorite browser</p>
+						<aside class="notes">
+							This abstraction of our content means that we can access it in more ways
+							<br>We can see the underlying structure of our sites much more easily than writing SQL queries
+						</aside>
+					</section>
+					<section data-background="./lib/img/ngcordova.png">
+						<h1 style="color:#000">ng Cordova</h1>
+						<aside class="notes">
+							ngCordova is a library that lets you access device features with javascript
+						</aside>
+					</section>
+					<section>
+						<p>Camera Sample</p>
+						<pre><code> .controller('MainCtrl', function($scope, Camera) {
+  $scope.getPhoto = function() {
+    Camera.getPicture().then(function(imageURI) {
+      // Image file is in: imageURI
+      $scope.lastPhoto = imageURI;
+    }, function(err) {
+      // Handle the error
+    }, {
+      quality: 75,
+      targetWidth: 320,
+      targetHeight: 320,
+      saveToPhotoAlbum: false
+    });
+  };
+})
+						</code></pre>
+						<pre><code><ion-view title="Picture Time">
+  <ion-content class="has-header">
+    <button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
+    <img ng-src="lastPhoto">
+  </ion-content>
+</ion-view>
+						</code></pre>
+						<aside class="notes">
+							Here's a code snippet of how easy it is to get access to the camera
+							<br>
+							From: https://github.com/driftyco/ionic-example-cordova-camera
+Camera service:
+.factory('Camera', ['$q', function($q) {
+ 
+  return {
+    getPicture: function(options) {
+      var q = $q.defer();
+      
+      navigator.camera.getPicture(function(result) {
+        // Do any magic you need
+        q.resolve(result);
+      }, function(err) {
+        q.reject(err);
+      }, options);
+      
+      return q.promise;
+    }
+  }
+}])
+						</aside>
+					</section>
+				</section>
+				<section>
+					<h2>Go make some apps!</h2>
+					<img src="./lib/img/repme-being-used.jpg" alt="">
 				</section>
 
 			</div>
@@ -86,7 +247,9 @@
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+	        { src: 'socket.io/socket.io.js', async: true },
+	        { src: 'plugin/notes-server/client.js', async: true }
 				]
 			});
 
