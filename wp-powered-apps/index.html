@@ -6,7 +6,7 @@
 
 		<title>WordPress Powered Hybrid Mobile Apps</title>
 
-		<meta name="description" content="A presentation on creating hybrid mobile apps powered by WordPress by AJ Zane">
+		<meta name="description" content="A presentation on creating hybrid mobile apps powered with WordPress by AJ Zane">
 		<meta name="author" content="AJ Zane">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,6 +19,12 @@
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<style>
+			img { 
+				border: none !important;
+			}
+		</style>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -41,69 +47,312 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>WP as an Engine</h1>
+					<h2>WP as an Engine</h2>
 					<h3>for Hybrid Mobile Apps</h3>
+					<p>or:</p>
+					<p>DOES MY COFFEE SHOP NEED AN APP?</p>
 					<p>
-						<small>Created by <a href="http://AJZane.com">AJ Zane</a> / <a href="http://twitter.com/azanebrain">@azanebrain</a></small>
+						<br>
+						<small>Created by <a href="http://AJZane.com">AJ Zane</a></small>
+						<br>
+						<small><a href="http://twitter.com/azanebrain">@azanebrain</a> ~</small>
+						<small><a href="https://veyo.com">Veyo</a> ~</small>
+						<small><a href="http://FrontEndAuthority.org">Front End Authoriy</a></small> 
 					</p>
+					<p>
+						<small>slides: <a href="http://azanebrain.github.io/presentations/wp-powered-apps">azanebrain.github.io/presentations/wp-powered-apps</a></small> 
+					</p>
+					<aside class="notes">
+						+++ RESET TIME +++
+					</aside>
 				</section>
-
+				<section>
+					<section>
+						<h1>My coffee shop<br>has an app</h1>
+						<aside class="notes">
+							+++ RESET TIME +++
+							<br>-I was so excited. THE FUTURE IS AWESOME
+							<br>-I DLd and discovered what I could do
+						</aside>
+					</section>
+					<section>
+						<img src="./lib/img/pinterest.png" alt="Pinterest Logo">
+						<aside class="notes">Pictures of my croissants and coffee</aside>
+					</section>
+					<section>
+						<img src="./lib/img/foursquare.png" alt="FourSquare Logo">
+						<aside class="notes">First to know about deals and events</aside>
+					</section>
+					<section>
+						<img src="./lib/img/opentable.png" alt="OpenTable Logo">
+						<aside class="notes">I was able to reserve my favorite seat that got the best wifi</aside>
+					</section>
+					<section>
+						<img src="./lib/img/postmates.png" alt="Postmates Logo">
+						<aside class="notes">I ordered deliver for those late night code sessions</aside>
+					</section>
+					<section>
+						<h3>Does my coffee shop need an app?</h3>
+						<aside class="notes">
+							Pointless. It could have been a website
+							<br>-Who DLs mom and pop shops?
+							<br>-After my revelation, I started to think about clone apps
+						</aside>
+					</section>
+					<section>
+						<p>IMDB, VONS, Reddit, Subway, </p>
+						<p>CNN, Stack Exchange, HipMunk, </p>
+						<p>Facebook, Trip It, Seafood Watch, </p>
+						<p>Jamba Juice, Quora, Trip Advisor, </p>
+						<p>Meetup, LinkedIn, Pluralsight, Trello</p>
+						<p>. . .</p>
+						<aside class="notes">
+							Take a minute to think about how many clone apps you have
+							<br>-side note: 8 coupon apps
+						</aside>
+					</section>
+					<section data-background="./lib/img/sushiapp.jpg" style="background:rgba(0,0,0,.4)">
+						<h2>Opposite of the <br>Responsive Revolution</h2>
+						<!-- <img src="" alt=""> -->
+						<aside class="notes">
+							I don't actually have a coffee shop / app, but the craze is pandemic
+							<br>-biz owners have pressure to appify, engagement, conversions
+							<br>-We aren't convincing others of responsive. They're coming to us for apps
+						</aside>
+					</section>
+					<section>
+						<h3>Assumptions</h3>
+						<p class="fragment">Offline Storage</p>
+						<p class="fragment">Push Notifications</p>
+						<p class="fragment">Rich Data Models</p>
+						<p class="fragment">Speed</p>
+						<aside class="notes">
+							People have assumptions about what apps do well
+							<br>* Offline storage: Battery life, data, Always On
+							<br>* Push Note: engagement *3
+							<br>* Data Model: Defines an app as inherently different than a site
+							<br>* Speed
+						</aside>
+					</section>
+					<section>
+						<h3>Assumptions are wrong</h3>
+						<p class="fragment">Browser Offline Storage &amp; Push Notifications with Webworkers</p>
+						<p class="fragment">WordPress is an Engine</p>
+						<p class="fragment">Speed</p>
+						<p class="fragment">Will texting work?</p>
+						<p class="fragment">Twitter was a hybrid app</p>
+						<aside class="notes">
+							* Browsers are supporting these
+							<br>* WP is the best tool for managing the backend of an app
+							<br>* Speed
+							<br>* can you text?
+							<br>* Twitter
+						</aside>
+					</section>
+					<section>
+						<h1>When <em>DO</em> you <br>need an app?</h1>
+						<aside class="notes">
+							So the browser today is pretty powerful, but it doesn’t do everything. If it did, I don’t think I’d be giving this talk
+							<br>-Here are my reasons for when you do need an app:
+						</aside>
+					</section>
+					<section>
+						<h3><em>When DO you need an app?</em></h3>
+						<h2>Require Device Hardware</h2>
+						<aside class="notes">
+							Trail example: GPS, offline, send info to smartwatch
+						</aside>
+					</section>
+					<section>
+						<h3><em>When DO you need an app?</em></h3>
+						<h2>Individual Concern</h2>
+						<aside class="notes">
+							Providing an incredibly specific feature that needs to be at your user’s fingertips at all times
+							<br>-FBook Messenger
+							<br>-Apps are important. Let's get into how to make them
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>SAAS</h1>
+						<aside class="notes">
+							There are many services to make app version of your WP site
+						</aside>
+					</section>
+					<section>
+						<p>apppresser, reactor, wp app kit,</p>
+						<p>mobiloud, ideapress, worona,</p>
+						<p>wiziapp, engine themes, wp app ninja,</p>
+						<p>ionopress, moby blog, engap,</p>
+						<p>androapp, appful, iwapppress</p>
+						<p>. . .</p>
+						<aside class="notes">
+							MANY
+							<br>-Provide GUI tools to build the app and pull out WP content
+						</aside>
+					</section>
+					<section>
+						<h3>Ease of Use</h3>
+						<p>vs</p>
+						<h3>Limited Control</h3>
+						<aside class="notes">
+							Like page builders, your options are limited.
+							<br>-There is a use case, but I like my code
+							<br>-NERD OUT!
+						</aside>
+					</section>
+				</section>
 				<section>
 					<section>
 						<h2>Hybrid apps are cool</h2>
 						<p>because we're inherently <s>lazy</s> <em>efficient</em></p>
+						<p class="fragment">because they use web build tools</p>
 						<aside class="notes">
-							Notes
+							I got excited. We can be lazy-- efficient
+							<br>-Web code == no new languages
+							<br>-Learn JS deeply
+							<br>* Build tools
 						</aside>
 					</section>
 					<section data-background="./lib/img/lotr-onering.jpg">
 						<h1>One codebase to rule them all</h1>
 						<aside class="notes">
 							Write once, deploy everywhere
-							<br>
-							Usually, we imply that the code will run on Android and iOS. We lose some native performance, with the benefit of cutting our development time in half
-
+							<br>-Imagine writing diff code for every browser
 						</aside>
 					</section>
 					<section data-background="./lib/img/devices.jpg">
 						<aside class="notes">
-							But really , the hybrid app approach doesn't just cut our development time in half, but by many multiples. 
-							<br>The same code can run in the browser, on a Windows phone, a watch, a car, or the next weird smart home device that hits the market
-						</aside>
-					</section>
-					<section>
-						<h2>Ionic</h2>
-						<img src="./lib/img/logo-ionic.png" alt="Ionic Logo" width="400">
-						<p>HTML, CSS, (Angular)JS</p>
-						<aside class="notes">
-							Ionic is great because with very little overhead you can access your site's content and display it w native-like elements coded in HTML, CSS, and JS
-							<br>I also write angular all day so it's nice not having to switch gears
-						</aside>
-					</section>
-					<section data-background="">
-						<h2>WP is a step away</h2>
-						<img src="./lib/img/wp-ionic-material.gif" alt="">
-						<h2>Device features are closer</h2>
-						<aside class="notes">
-							 All of the benefits we get making themes and plugin in WP are now a step away. 
-							 <br> Every feature you want to pull into the app, like custom fields, user authenticatiom, etc you'll have to decide if you're going to write your own connector, or find a plugin
+							"App" implies Android and iOS
+							<br>-Really, we cut dev time by many multiples
 						</aside>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Prepping your site</h2>
-						<p><a href="http://torquemag.io/2014/11/preparing-wordpress-site-power-single-page-web-app/" target="_blank">Torque Mag: Preparing WordPress to Power A Single Page Web App</a></p>
-						<ul>
-							<li>CORS</li>
-							<li>Limiting the default number of posts returned to prevent accidental DDOS</li>
-							<li>Making pagination queryable in GET requests</li>
-							<li>Creating a REST API cache library</li>
-							<li>Creating custom endpoints (menu example)</li>
-						</ul>
+						<h2>WP JSON REST API</h2>
+						<p>v1: <a href="https://wordpress.org/plugins/json-rest-api/" target="_blank">wordpress.org/plugins/json-rest-api</a></p>
+						<p>v2: <a href="https://wordpress.org/plugins/rest-api/" target="_blank">wordpress.org/plugins/rest-api/</a></p>
+						<aside class="notes">
+							WC Bingo!
+							<br>-There's hubub, but it's truly the most important thing since CPT
+						</aside>
 					</section>
 					<section>
-						<h2>Custom Field meta from ACF</h2>
+						<h3>REST: REpresentational State Transfer</h3>
+						<p>A methedolgoy for clients (browsers) and servers to interact in complex ways without the client knowing anything beforehand about the server and the resources it hosts</p>
+						<aside class="notes">
+							Rest = lazy
+							<br>-Ideology that front end doesn't need to know anything about backend / data structure
+						</aside>
+					</section>
+					<section>
+						<h3>REST Verbs</h3>
+						<ul>
+							<li>GET</li>
+							<li>PUT</li>
+							<li>POST</li>
+							<li>DELETE</li>
+						</ul>
+						<aside class="notes">
+							Key words are like The Loop, Hooks, Meta
+						</aside>
+					</section>
+					<section>
+						<h3>JSON: JavaScript Object Notation</h3>
+						<p>A lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate</p>
+						<pre><code>var wcsd = {
+	name: 'WordCamp San Diego',
+	date: 'April 23-24, 2016',
+	location: 'San Diego'
+};
+console.log('Welcome to: ' + wcsd.name + ' in ' + wcsd.location);
+						</code></pre>
+						<aside class="notes">
+							JSON is like an array where every space has a unique key
+						</aside>
+					</section>
+					<section>
+						<h3>Endpoint</h3>
+						<p>Functions available through the API</p>
+						<h3>Route</h3>
+						<p>The "name" used to access endpoints as a URL</p>
+						<aside class="notes">
+							Endpoints are like functions that trigger backend actions
+							<br>-Route is the human readable way to access the function
+							<br>-A route can trigger many endpoints
+						</aside>
+					</section>
+					<section>
+						<h3>MVC: Model View Controller</h3>
+						<div class="fragment">
+							<p>PHP: Logic and markup</p>
+<pre><code>// The Query
+$the_query = new WP_Query( $args );
+// The Loop
+if ( $the_query->have_posts() ) {
+	echo '<ul>';
+	while ( $the_query->have_posts() ) {
+		$the_query->the_post();
+		echo '<li>' . get_the_title() . '</li>';
+	}
+	echo '</ul>';
+}
+wp_reset_postdata();
+</code></pre>
+						</div>
+						<aside class="notes">
+							Introduces a new way of coding. 
+							<br>-To be a WP dev you gotta be front, mid, and OK with backend
+							<br>-Timber == separation of concerns
+						</aside>
+					</section>
+					<section>
+						<h4>MVC</h4>
+						<p>JavaScript:</p>
+<pre><code>getPosts() { 
+	return resource.get('http://mysite.com/wp-json/posts');
+}
+var posts = getPosts();
+</code></pre>
+						<p>Markup:</p>
+<pre><code>&lt;ul>
+	<li foreach="post in posts">
+		{{post.title}}
+	</li>
+&lt;/ul>
+</code></pre>
+						<aside class="notes">
+							JS gets the data, HTML displays the data
+							<br>-Great for teams
+							<br>-Great for sanity
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Preparing your site</h2>
+						<ul>
+							<li class="fragment">HTTPS</li>
+							<li class="fragment">CORS <br><small>(Cross Origin Resource Sharing)</small></li>
+							<li class="fragment">Limiting the default number <br>of posts returned to prevent <br>accidental DDOS</li>
+							<li class="fragment"><a href="http://torquemag.io/2014/11/preparing-wordpress-site-power-single-page-web-app/" target="_blank">Torque Mag: Preparing <br>WordPress to Power <br>A Single Page Web App</a></li>
+						</ul>
+						<aside class="notes">
+							+++HALFWAY! 15minute mark+++
+							<br>-I've got some bad news. Setting this up isn't a one click and go process
+							<br>-We have to tweak some things
+						</aside>
+					</section>
+					<section>
+						<h3>Enable the Plugin</h3>
+						<aside class="notes">
+							It's not in core yet
+						</aside>
+					</section>
+					<section>
+						<h2>Example: Custom Field meta from ACF</h2>
 						<pre><code>if( function_exists('get_fields') ){
   // Add ACF field data to the WP-API
   function wp_api_encode_acf($data,$post,$context){
@@ -118,52 +367,194 @@
 						</code></pre>
 						<p><a href="https://wordpress.org/plugins/wp-rest-api-custom-fields/" target="_blank">WP REST API Custom Fields plugin</a></p>
 					</section>
-					<section>
-						<h2>Querying</h2>
-						<pre><code>angular.module('starter', ['ionic', 'starter.controllers', 'ui.router', 'ngResource'])
-.factory('resources', function($resource) {
-  var url = 'http://mysite.com/wp-json';
-  return {
-    'posts': $resource(url + '/posts'),
-  };
-})
-						</code></pre>
-
-						<pre><code>resources.posts.query({
-  'type[]': 'custom-post-type',
-  'filter[status]': 'publish',
-  'filter[order]': 'DESC',
-},
-						</code></pre>
-					</section>
-					<section>
-						<h2>User Authentication</h2>
-						<p><a href="https://auth0.com/authenticate/ionic/wordpress" target="_blank">auth0</a></p>
-						<p><a href="https://wordpress.org/plugins/json-api-user/" target="_blank">JSON User API plugin</a></p>
-					</section>
 				</section>
 				<section>
 					<section>
-						<h1>What we lose from PHP</h1>
-						<h2>we gain from the device</h2>
+						<h2>Writing code</h2>
+					</section>
+					<section>
+						<h3>30 Second Intro to WP JSON REST API</h3>
+						<p>1) Endpoint:</p>
+						<li>V1: /wp-json/posts?type[]=legislation</li>
+						<li>V2: <a>/wp-json/wp/v2/legislation</a></li>
+						<p>2) Javascript function</p>
+						<p>3) JSON: </p>
+						<pre><code>{
+	ID: 59,
+	title: "HR 1599 &#8211; Safe and Accurate Food Labeling Act of 2015",
+	status: "publish",
+	type: "legislation",
+	author: { ...},
+	content: "&lt;p>Vote to pass a bill that prohibi...."
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Tools you need</h2>
+						<p>Endpoint tester (Postman)</p>
+					  <img src="./lib/img/postman.png" alt="Postman" width="650">
+					</section>
+					<section>
+						<h2>Tools you need</h2>
+						<p>JSON Formatter extension in your favorite browser</p>
+					  <img src="./lib/img/json-unformatted.png" alt="JSON Viewer">
+					</section>
+					<section>
+						<h2>Frameworks</h2>
+						<ul>
+							<li>Familiarity</li>
+							<li>UI Kit</li>
+							<li>Testing</li>
+							<li>Community</li>
+							<li>Extendable</li>
+						</ul>
+					</section>
+					<section>
+					  <img src="./lib/img/logo-ionic.png" alt="Ionic Logo" width="400">
+					  <p>HTML, CSS, (Angular)JS</p>
+						<p>Webview within Ponegap (Cordova)</p>
+						<p><a href="http://ionicframework.com">ionicframework.com</a> &amp; <a href="https://angularjs.org/">angularjs.org</a> (Google)</p>
+						<p>Open Source</p>
+						<p>Starter kit on GitHub: <a href="https://github.com/miya0001/ionic-starter-wordpress">miya0001/ionic-starter-wordpress</a></p>
+					</section>
+					<section>
+						<img src="./lib/img/logo-reactnative.png" alt="REACT Native Logo" width="500">
+						<p>REACT, JSX</p>
+						<p>JSCore rendering in Objective C</p>
+						<p><a href="https://facebook.github.io/react-native/docs/">facebook.github.io/react-native/docs</a></p>
+						<p>FaceBook</p>
+						<p>Open Source</p>
+						<p><em>(Calypso)</em></p>
+					</section>
+					<section>
+						<h3>What else you'll need</h3>
+						<ul>
+							<li>XCode for iOS, Windows for Windows OS</li>
+							<li>App store licenses</li>
+						</ul>
 						<aside class="notes">
-							So far, it seems like adding the REST API causes more trouble than good since we have to add all these hoops just to get back our basic WP functionality
-							<br>But now a whole world is opened up
+							iOS and Windows == VM. Android == :)
+							<br>-Apple: 99/yr, Google: 25, Amazon: free
 						</aside>
 					</section>
 					<section>
-						<h2>Request content anywhere</h2>
-						<p>Postman</p>
-						<p>JSON Formatter extension in your favorite browser</p>
+						<h2>Custom Endpoints</h2>
+						<p>mysite.com/wp-json/myplugin/v1/author/42</p>
+						<pre><code>function my_awesome_func( $data ) {
+   $posts = get_posts( array(
+       'author' => $data['id'],
+   ) );
+   if ( empty( $posts ) ) { return null; }
+   return $posts[0]->post_title;
+ }</code></pre>
+ <pre><code>add_action( 'rest_api_init', function () {
+    register_rest_route( 'myplugin/v1', '/author/(?P<id>\d+)', array(
+        'methods' => 'GET',
+        'callback' => 'my_awesome_func',
+    ) );
+} );</code></pre>
+						<p><a href="http://v2.wp-api.org/extending/adding/">v2.wp-api.org/extending/adding</a></p>
 						<aside class="notes">
-							This abstraction of our content means that we can access it in more ways
-							<br>We can see the underlying structure of our sites much more easily than writing SQL queries
+							The docs have more details
+							<br>-namespace, type checking, return types, permission checking
+						</aside>
+					</section>
+					<section>
+						<h2>User Authentication</h2>
+						<p>OAuth Plugin: <a href="https://github.com/WP-API/OAuth1">github.com/WP-API/OAuth1</a></p>
+						<aside class="notes">
+							OAuth allows users to login with their normal credentials, but allows you to control which applications can access the site
+						</aside>
+					</section>
+					<section>
+						<h2>Sanitize Data</h2>
+						<pre><code>bower install angular-sanitize</code></pre> 
+						<p>Add to index.html:</p>
+						<pre><code><script src="lib/angular-sanitize/angular-sanitize.min.js"></script></code></pre>
+						<p>Inject:</p>
+						<pre><code>angular.module('app', ['ngSanitize']);</code></pre>
+					</section>
+					<section>
+						<h2>Cache</h2>
+						<p>Write data to a local DB</p>
+						<p>Sync local DB to production DB</p>
+						<aside class="notes">
+							I'm no cache master, so I like to keep it simple
+						</aside>
+					</section>
+					<section>
+						<h2>Killing Sessions</h2>
+					</section>
+					<section>
+						<h2>Formatting the_content</h2>
+						<pre><code>{
+"id": 42,
+"content": {
+	"rendered": "&lt;p>Welcome to WordPress.&lt;/p>\n"
+},
+}
+// Output: &lt;p>Welcome to WordPress.&lt;/p>
+						</code></pre>
+						<p>Insert HTML instead of printing the string:</p>
+						<pre><code><div ng-bind-html="post.content.rendered"></div></code></pre>
+					</section>
+					<section>
+						<h2>Register API-Visible CPT</h2>
+						<pre><code>add_action( 'init', 'my_book_cpt' );
+function my_book_cpt() {
+	$labels = array( ... );
+	$args = array(
+		'show_in_rest'       => true,
+		'rest_base'          => 'books-api',
+		'rest_controller_class' => 'WP_REST_Posts_Controller',
+	);
+	register_post_type( 'book', $args );
+}
+</code></pre>
+					</section>
+					<section>
+						<h2>Register API-Visible Taxonomy</h2>
+						<pre><code>add_action( 'init', 'my_book_taxonomy', 30 );
+function my_book_taxonomy() {
+  $labels = array(...);
+	$args = array(
+    'show_in_rest'       => true,
+    'rest_base'          => 'genre',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+	);
+  register_taxonomy( 'genre', array( 'book' ), $args );
+}
+						</code></pre>
+						
+					</section>
+					<section>
+						<h2>Packaging</h2>
+						<li class="fragment">Utilize framework build workflow</li>
+						<li class="fragment">Setup licenses</li>
+						<li class="fragment">Apply meta data</li>
+						<li class="fragment">Submit and wait :[</li>
+						<p class="fragment"><a href="http://view.ionic.io/">Ionic View</a></p>
+						<aside class="notes">
+							
+						</aside>
+
+					</section>
+				</section>
+				<section>
+					<section data-background="">
+						<h2>WP is a step away</h2>
+						<img src="./lib/img/wp-ionic-material.gif" alt="">
+						<h2>Device features are closer</h2>
+						<aside class="notes">
+							So far, it seems like adding the REST API causes more trouble than good
+							<br>-It's a cost, but it's worth it
+							<br>-so much work has already been done
 						</aside>
 					</section>
 					<section data-background="./lib/img/ngcordova.png">
-						<h1 style="color:#000">ng Cordova</h1>
+						<h1 style="color:#000">Cordova</h1>
 						<aside class="notes">
-							ngCordova is a library that lets you access device features with javascript
+							Cordova is a library that lets you access device features with javascript
 						</aside>
 					</section>
 					<section>
@@ -192,33 +583,39 @@
 </ion-view>
 						</code></pre>
 						<aside class="notes">
-							Here's a code snippet of how easy it is to get access to the camera
-							<br>
-							From: https://github.com/driftyco/ionic-example-cordova-camera
-Camera service:
-.factory('Camera', ['$q', function($q) {
- 
-  return {
-    getPicture: function(options) {
-      var q = $q.defer();
-      
-      navigator.camera.getPicture(function(result) {
-        // Do any magic you need
-        q.resolve(result);
-      }, function(err) {
-        q.reject(err);
-      }, options);
-      
-      return q.promise;
-    }
-  }
-}])
+							It's not a lot of code, but it gives you access to the camera and you get to do whatever you want with the image
+							<br>-There are tons of libraries and work that's already been done
 						</aside>
 					</section>
 				</section>
-				<section>
-					<h2>Go make some apps!</h2>
-					<img src="./lib/img/repme-being-used.jpg" alt="">
+				<section data-background="./lib/img/repme-being-used.jpg" >
+					<div style="background:rgba(0,0,0,.6)">
+						<h2>Go make some apps!</h2>
+						<ul>
+							<li>
+								<a href="http://wp-api.org">wp-api.org</a>
+							</li>
+							<li>
+								<a href="http://ionicframework.com">ionicframework.com/getting-started</a>
+							</li>
+							<li>
+								<a href="https://facebook.github.io/react-native">facebook.github.io/react-native</a>
+							</li>
+						</ul>
+						<p style="color:#fff">Starter kit on GitHub: 
+							<br>
+							<a href="https://github.com/miya0001/ionic-starter-wordpress">miya0001/ionic-starter-wordpress</a>
+						</p>
+					</div>
+					<br><br>
+					<div style="background:rgba(256,256,256,.8)">
+						<p style="color:#000">azanebrain.github.io/presentations/wp-powered-apps<a href="http://azanebrain.github.io/presentations/wp-powered-apps"></a> </p>
+					</div>
+					
+						<p style="color:#000">
+							<span style="background:rgba(256,256,256,.8)">&nbsp; @azanebrain &nbsp;</span>
+						</p>
+					
 				</section>
 
 			</div>
