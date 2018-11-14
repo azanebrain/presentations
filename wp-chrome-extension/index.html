@@ -11,6 +11,16 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<style>
+			img {
+				border: none !important;
+			}
+		
+			.slide-content-background {
+				background-color: rgba(0, 0, 0, .4)
+			}
+		</style>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -36,6 +46,81 @@
 					</p>
 				</section>
 
+				<section
+				class="slide-content-background"
+				data-background-image="./lib/img/zoohackathon.png">
+					<h2>Story from a hackathon</h2>
+
+					<aside class="notes">
+						Participated in the global Zoohackathon 2018
+						<br>* My team developed a Chrome Ext to help people tell if they may be looking to purchase an item that contains materials that is harmful to ecologies
+						<br>* We won the San Diego chapter and are currently in the global round
+					</aside>
+				</section>
+
+				<section class="slide-content-background" data-background-image="./lib/img/time.jpg">
+					<h2>Constraints</h2>
+					<p>Developers exploring new territory</p>
+					<p>Non-technical resources</p>
+					<p>Time limit</p>
+					<aside class="notes">
+						image: Photo by Buenosia Carol from Pexels.com - https://www.pexels.com/photo/707582/
+					</aside>
+				</section>
+
+				<section class="slide-content-background" data-background-image="./lib/img/wp.jpg">
+					<h2>Solution: WP</h2>
+					<p>Utilize what we're familiar with</p>
+					<p>Data entry is simple</p>
+					<p>5-minute install</p>
+					<p>REST API</p>
+
+					<aside class="notes">
+						image: https://www.pexels.com/photo/261662/
+					</aside>
+				</section>
+
+				<section class="slide-content-background" data-background-image="./lib/img/code.jpg" style="background-color: rgba(0, 0, 0, .7);">
+					<h2>Demo &amp; Code walkthrough</h2>
+					<p><a href="https://2018zoohackathon.ajzane.com/presentation/">Demo</a> (Slide 17)</p>
+					<p>Chrome Extension has 3 parts:</p>
+					<ul>
+						<li><a href="https://github.com/azanebrain/zoohackathon2018/blob/master/background.js">Backround</a></li>
+						<li><a href="https://github.com/azanebrain/zoohackathon2018/blob/master/dom.js">Dom</a></li>
+						<li><a href="https://github.com/azanebrain/zoohackathon2018/blob/master/popup.js">Popup</a></li>
+					</ul>
+					<aside class="notes">
+						* Background: Controls communication between the other two pieces. Retrieves the Posts details and sets content to storage
+						<br>* DOM: Current page. Gets categories, finds matches, sets Post IDs to storage
+						<br>* Popup: Populates the template w post content. Shows only the posts that were set by DOM
+						image: https://www.pexels.com/photo/34600/
+					</aside>
+				</section>
+
+				<section>
+					<h2>"What's your DB?"</h2>
+					<p>"We don't have one."</p>
+					<aside class="notes">
+						Other teams spent long cycles architecting what we got for free:
+						<br>DB architecture, REST API, Jetpack CDN, Maintainable platform for content
+					</aside>
+				</section>
+
+				<section class="slide-content-background" data-background-image="./lib/img/next.jpg">
+					<h2>Next:</h2>
+					<p>Endpoint Metrics</p>
+					<p>User Settings</p>
+					<p><a href="https://github.com/azanebrain/zoohackathon2018/pulls">PRs Welcome :]</a></p>
+					<p><a href="https://github.com/azanebrain/zoohackathon2018/issues">Issues List</a></p>
+					<aside class="notes">
+						Photo by Steven Arenas from Pexels - https://www.pexels.com/photo/314380/
+					</aside>
+				</section>
+
+				<section>
+					<img src="./lib/img/concon.png" style="max-width:80%; max-height:80%;">
+					<p>GitHub: <a href="https://github.com/azanebrain/zoohackathon2018">azanebrain/zoohackathon2018</a></p>
+				</section>
 			</div>
 		</div>
 
